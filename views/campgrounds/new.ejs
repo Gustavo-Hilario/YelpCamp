@@ -1,0 +1,63 @@
+<% include ../partials/header%>
+
+<div class="container">
+		<div class="createNewCampground container w-75 py-2">
+
+		<h1 class="d-sm-none d-block display-4 text-center">Create a New Campground</h1>
+		<h1 class="d-none d-sm-block display-3 text-center">Create a New Campground</h1>
+
+		<form action="/campgrounds" method="POST">
+			<div class="row">
+				<div class="col-md-9 d-flex justify-content-center float-left">
+					<div class="form-group w-100">
+						<label for="name" class="text-uppercase"><strong>Campground Name</strong></label>
+						<input type="text" name="name" class="form-control" id="name" placeholder="New Campground" required>
+					</div>
+				</div>
+				<div class="col-md-3 d-flex justify-content-center float-left">
+					<div class="form-group w-100">
+						<label for="price" class="text-uppercase"><strong>Campground Price</strong></label>
+						<input type="number" name="price" class="form-control" id="price" placeholder="Price" min="0.01" step="0.01" required>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 d-flex justify-content-center">
+					<div class="form-group w-100">
+						<label for="image" class="text-uppercase"><strong>Campground Image URL</strong></label>
+						<input type="text" name="imageURL" class="form-control" id="image" placeholder="Image URL" required>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 d-flex justify-content-center">
+					<div class="form-group w-100">
+						<label for="campground" class="text-uppercase"><strong>Campground Description</strong></label>
+						<textarea type="text" name="description" class="form-control" placeholder="Campground Description" rows="5" spellcheck="true"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-3 d-flex justify-content-center">
+					<div class="form-group">
+						<button type="submit" name="submit" class="btn-block btn-lg">SUBMIT</button>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="d-flex justify-content-center">
+						<div class="form-group">
+							<a href="/campgrounds" class="goBackButton btn btn-block btn-lg">GO BACK <i class="fas fa-undo-alt text-dark"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>	
+		</form>
+
+	</div>
+</div>
+
+<% include ../partials/footer%>

@@ -1,0 +1,40 @@
+body{
+	color: #523906;
+	font-family: 'Recursive', sans-serif;
+}
+
+button{
+	background-color: #CDB30C;
+	color: #62760C;
+}
+
+button:hover{
+	background-color: #62760C;
+	color: #CDB30C;
+}
+
+nav.navbar{
+	background-color: #2B3163;
+	min-height: 5em;
+	color: #CDB30C ;
+}
+
+nav.navbar #brand{
+	font-size: 1.5rem;
+	color: #CDB30C ;
+	margin: 0 20px;
+} 
+
+nav.navbar #brand:hover{
+	color: #535204;
+} 
+
+nav.navbar li.nav-item a.nav-link{
+	font-family: 'Montserrat', sans-serif;
+	color: #CDB30C ;
+	margin: 0 20px;
+}
+
+nav.navbar li.nav-item a.nav-link:hover{
+	color: #535204;
+} 

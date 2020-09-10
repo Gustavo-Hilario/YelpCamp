@@ -1,9 +1,9 @@
 $(document).ready(function () {
 	// SCROLLING NAVBAR VARIABLES
-	if ($('#topCampgrounds')) {
+	if ($('div#topCampgrounds').length) {
 		var maxYPositionwithoutNavbar = $('#topCampgrounds').position().top;
 	} else {
-		var maxYPositionwithoutNavbar = 200;
+		var maxYPositionwithoutNavbar = 50;
 	}
 	var previousYPosition = window.pageYOffset;
 

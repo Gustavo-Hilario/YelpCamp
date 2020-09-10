@@ -1,14 +1,17 @@
 /* SECTION ADVANTAGES */
+body{
+	overflow-x: hidden;
+}
 
-div#advantages{
-	margin-bottom: 200px;
+div#topCampgrounds{
+	margin-top: 200px;
 }
 
 div#advantages div.row{
 	height: 300px;
 }
 
-div#advantagesRow1 div:nth-last-of-type(2), div#advantagesRow3 div:nth-last-of-type(2) {
+div#advantagesRow1 div:nth-last-of-type(2) {
 	width: 100%; 
 	height: 100%; 
 	background-image: url("../../img/guitar_camping.jpg"); 
@@ -17,17 +20,39 @@ div#advantagesRow1 div:nth-last-of-type(2), div#advantagesRow3 div:nth-last-of-t
 	background-position: center;
 }
 
-div#advantagesRow2, div#advantagesRow4{
+div#advantagesRow3 div:nth-last-of-type(2) {
+	width: 100%; 
+	height: 100%; 
+	background-image: url("../../img/girl-with-flowers.jpg"); 
+	background-repeat: no-repeat; 
+	background-size: contain; 
+	background-position: center;
+}
+
+div#advantagesRow2{
 	background-color: #FFF2EA;
 }
 
-div#advantagesRow2 div:nth-child(2), div#advantagesRow4 div:nth-child(2){
+div#advantagesRow2 div:nth-child(2){
 	width: 100%; 
 	height: 100%; 
 	background-image: url('../../img/cat_dog.jpg'); 
 	background-repeat: no-repeat; 
 	background-size: contain; 
 	background-position: center;
+}
+
+div#advantagesRow4 div:nth-child(2){
+	width: 100%; 
+	height: 100%; 
+	background-image: url('../../img/lyon-bear.jpg'); 
+	background-repeat: no-repeat; 
+	background-size: contain; 
+	background-position: center;
+}
+
+div#advantagesRow4{
+	background-color: #EBF0F1;
 }
 
 /* CAMPGROUND CARDS */
@@ -57,18 +82,29 @@ div.card-body a:hover{
 	color: #2B3163;
 }
 
-/* Finish Card Settings */
-
+/* TESTIMONIALS */
+div#clientsTestimonials{
+	height: 500px;
+	overflow-x: hidden;
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-	
+	div#advantages div.row{
+		height: 800px;
+	}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-	div#advantages{
-		margin-bottom: 120px;
+	div#topCampgrounds{
+		margin-top: 150px;
+	}
+	div#advantages div.row{
+		height: 300px;
+	}
+	div#clientsTestimonials{
+		height: 300px;
 	}
 }
 

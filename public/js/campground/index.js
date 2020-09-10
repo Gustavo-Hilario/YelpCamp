@@ -7,8 +7,19 @@ $(document).ready(function(){
 	$("div.card").mouseout(function(){
 		$(this).find("p.card-text").css("font-weight", "");
 	});
-	
-	// $("div.card").click(function(){
-	// 	$(this).effect("slide", "easeOutBounce", 1000);
-	// });
+
+	// Testimonials showing effect ...
+	var testimonialsPosition = $('#topCampgrounds').position().top + $('#topCampgrounds').innerHeight();
+	var windowPosition = 0;
+	$('#clientsTestimonials').hide();
+
+	$(window).scroll( () => {
+		windowPosition = window.scrollY + window.innerHeight;
+
+		if(windowPosition > testimonialsPosition){
+			$('#clientsTestimonials').show('drop', 2000);
+		}
+		// console.log('testimonialsPosition: ' + Math.floor(testimonialsPosition));
+		// console.log('windowposition: ' + Math.floor(windowPosition));
+	});
 });

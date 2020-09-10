@@ -1,4 +1,4 @@
- <% include ../partials/header%>
+<% include ../partials/header%>
 
 <!-- NAVBAR => transparent over ADVANTAGES, when scroll down it will have a color of #2B3163-->
 
@@ -7,7 +7,8 @@
 	<div class="row mx-0 mb-md-5" id="advantagesRow1">
 		<div class="col-12 order-2 mt-n1 pb-5 col-md-6 order-md-1 p-md-0 m-md-0 advantagesImages"></div>
 
-		<div class="col-12 order-1 mx-2 mt-2 text-center col-md-6 p-md-0 m-md-0 d-md-flex align-items-center" style="color: #2B3163; font-family: 'Rock Salt', cursive;">
+		<div class="col-12 order-1 mx-2 mt-2 text-center col-md-6 p-md-0 m-md-0 d-md-flex align-items-center"
+			style="color: #2B3163; font-family: 'Rock Salt', cursive;">
 			<div>
 				<h1 class="display-4">YelpCamp</h1>
 				<p class="mt-5">
@@ -17,8 +18,9 @@
 		</div>
 	</div>
 
-	 <div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow2">
-		<div class="col-12 order-2 col-md-6 order-md-1 d-flex align-items-center justify-content-center" style="color: #2B3163; font-family: 'Rock Salt', cursive;">
+	<div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow2">
+		<div class="col-12 order-2 col-md-6 order-md-1 d-flex align-items-center justify-content-center"
+			style="color: #2B3163; font-family: 'Rock Salt', cursive;">
 			<div>
 				<h1 class="display-4">YelpCamp</h1>
 				<p class="mt-5">
@@ -28,12 +30,15 @@
 		</div>
 
 		<div class="col-12 order-1 col-md-6 order-md-2 advantagesImages"></div>
-	 </div>
+	</div>
 
-	 <div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow3">
-		<div class="col-12 col-md-6 p-md-0 m-md-0 advantagesImages"></div>
+	<div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow3">
+		<div class="col-12 col-md-6 p-md-0 m-md-0 advantagesImages">
+			
+		</div>
 
-		<div class="col-12 col-md-6 p-md-0 m-md-0 d-flex align-items-center" style="color: #2B3163; font-family: 'Rock Salt', cursive;">
+		<div class="col-12 col-md-6 p-md-0 m-md-0 d-flex text-center align-items-center"
+			style="color: #2B3163; font-family: 'Rock Salt', cursive;">
 			<div>
 				<h1 class="display-4">YelpCamp</h1>
 				<p class="mt-5">
@@ -41,10 +46,11 @@
 				</p>
 			</div>
 		</div>
-	 </div>
+	</div>
 
-	 <div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow4">
-		<div class="col-12 order-2 col-md-6 order-md-1 d-flex align-items-center justify-content-center" style="color: #2B3163; font-family: 'Rock Salt', cursive;">
+	<div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow4">
+		<div class="col-12 order-2 col-md-6 order-md-1 d-flex align-items-center justify-content-center"
+			style="color: #2B3163; font-family: 'Rock Salt', cursive;">
 			<div>
 				<h1 class="display-4">YelpCamp</h1>
 				<p class="mt-5">
@@ -54,45 +60,54 @@
 		</div>
 
 		<div class="col-12 order-1 col-md-6 order-md-2 advantagesImages"></div>
-	 </div>
+	</div>
 
- </div>
+</div>
 <!-- MOST RATED CAMPGROUNDS => 4/2 ROW/COL SAYING ADVANTAGES OF YELPCAMP -->
-<div class="container my-5">
+<div class="container" id="topCampgrounds">
 	<div class="row d-flex justify-content-center">
 		<% campgrounds.forEach(function(campground){ %>
-			<div class="col-lg-3 col-md-4 col-sm-6 pb-4 d-flex justify-content-center">
-				<div class="card shadow " style="width: 18rem;">
-					<img src="<%= campground.image %>" class="campground-img card-img-top" alt="<%= campground.name %>">
-						<div class="card-body">
-							<h5 class="card-title text-center"><strong><%= campground.name %></strong></h5>
-							<p class="card-text">
-								<% if(campground.description.length > 100){ %>
-										<%= campground.description.substring(100, 0) + " ..." %>
-								<%  } else { %>
-										<%= campground.description %>
-									<% } %>
-							</p>
-							<!--The ID already exist because it is created automatically-->
-							<a href="/campgrounds/<%= campground._id %>" class="btn">See more</a>
-						</div>
+		<div class="col-lg-3 col-md-4 col-sm-6 pb-4 d-flex justify-content-center">
+			<div class="card shadow " style="width: 18rem;">
+				<img src="<%= campground.image %>" class="campground-img card-img-top" alt="<%= campground.name %>">
+				<div class="card-body">
+					<h5 class="card-title text-center"><strong><%= campground.name %></strong></h5>
+					<p class="card-text">
+						<% if(campground.description.length > 100){ %>
+						<%= campground.description.substring(100, 0) + " ..." %>
+						<%  } else { %>
+						<%= campground.description %>
+						<% } %>
+					</p>
+					<!--The ID already exist because it is created automatically-->
+					<a href="/campgrounds/<%= campground._id %>" class="btn">See more</a>
 				</div>
 			</div>
-		<% }); %>	
+		</div>
+		<% }); %>
 	</div>
 </div>
 <!-- DEPOIMENTS => 1 ROW OF 3 DEPOIMENTS -->
-<div class="row bg-success m-0" style="height: 500px;">
-	<div class="col-10 d-flex align-items-center offset-1">
-		<div class="col-4 bg-warning h-75"></div>
-		<div class="col-4 bg-danger h-75"></div>
-		<div class="col-4 bg-primary h-75"></div>
+<div class="container-fluid" id="clientsTestimonials">
+	<div class="row h-100 d-flex justify-content-center bg-success" id="rowOfTestiomonials">
+		<div class="row w-100 d-flex">
+			<div class="col-12 my-2 col-md-6 col-lg-4 bg-warning d-flex justify-content-center align-items-center">
+				<div class="h-75 w-75 bg-secondary rounded"></div>
+			</div>
+			<div class="col-12 my-2 col-md-6 col-lg-4 bg-danger d-flex justify-content-center align-items-center">
+				<div class="h-75 w-75 bg-secondary rounded"></div>
+			</div>
+			<div class="d-none my-2 d-lg-flex col-lg-4 bg-primary justify-content-center align-items-center">
+				<div class="h-75 w-75 bg-secondary rounded"></div>
+			</div>
+		</div>
 	</div>
 </div>
-<!-- FOOTER => -->
- 
 
- 
+<!-- FOOTER => -->
+
+
+
 
 
 

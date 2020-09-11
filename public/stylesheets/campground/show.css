@@ -9,7 +9,7 @@ div.yelpCampInfo li:hover{
 }
 
 div.yelpCampInfo li.activeItem{
-	background-color: #523906;
+	background-color: #2B3163;
 }
 
 div.card img.img-responsive{
@@ -24,11 +24,11 @@ a{
 
 h3, h4{
 	font-family: 'Montserrat', sans-serif;
-	color: #535204;
 }
 
 h3.campgroundName{
 	text-align:center;
+	color: #2B3163;
 }
 
 h3.campgroundPrice{
@@ -42,77 +42,20 @@ p{
 
 p.campgroundauthor{
 	font-weight: 300;
-	color: #62760C;
 }
 
 h4.commentsDisplay{
 	font-family: 'Montserrat', sans-serif;
-	color: #535204;
-}
-
-/* DELETE CAMPGROUND DIALOG */
-div.ui-dialog{
-	border: 5px inset #CF1025;
-	opacity: 0.7;
-}
-
-div.ui-dialog:hover{
-	opacity: 1;	
-}
-
-div.ui-dialog-titlebar{
-	text-align: center;
-    background-color: #CF1025;
-    color: white;
-}
-
-div.ui-dialog-content{
-	padding: 10px 5px 0px 5px;
-    text-align: justify;
-    font-style: italic;
-}
-div.ui-dialog-content p{
-	margin:0;
-}
-
-div.ui-dialog-buttonpane{
-    display: flex;
-    justify-content: space-between;
-}
-
-div.ui-dialog div.ui-dialog-buttonpane div.ui-dialog-buttonset button.ui-button{
-	margin: 2px 10px;
-}
-
-div.ui-dialog div.ui-dialog-buttonpane div.ui-dialog-buttonset button.ui-button:hover{
-	background-color: #CF1025;
-    font-weight: 600;
-    color: white;
-}
-
-button.editButton, button.dialogOpener{
-	background-color: #CDB30C;
-	color: #62760C;
-}
-
-button.editButton:hover{
-	background-color: orange;
-	color: #CCE8F5;	
-}
-
-button.dialogOpener:hover{
-	background-color: red;
-	color: #CCE8F5;	
 }
 
 /* COMMENTS */
 a.newCommentButton{
 	background-color: #CDB30C;
-	color: #62760C;
+	color: #2B3163;
 }
 
 a.newCommentButton:hover{
-	background-color: #62760C;
+	background-color: #2B3163;
 	color: #CDB30C;
 }
 

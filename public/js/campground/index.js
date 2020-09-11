@@ -9,17 +9,18 @@ $(document).ready(function(){
 	});
 
 	// Testimonials showing effect ...
-	var testimonialsPosition = $('#topCampgrounds').position().top + $('#topCampgrounds').innerHeight();
+	var testimonialsPosition = Math.floor($('#clientsTestimonials').position().top + $('#clientsTestimonials').innerHeight()/2);
 	var windowPosition = 0;
-	$('#clientsTestimonials').hide();
+	$('#rowOfTestiomonials').hide();
+
 
 	$(window).scroll( () => {
-		windowPosition = window.scrollY + window.innerHeight;
+		windowPosition = Math.floor(window.scrollY + window.innerHeight);
 
-		if(windowPosition > testimonialsPosition){
-			$('#clientsTestimonials').show('drop', 2000);
+		if(windowPosition >= testimonialsPosition){
+			$('#rowOfTestiomonials').show("drop", 2000);
 		}
-		// console.log('testimonialsPosition: ' + Math.floor(testimonialsPosition));
-		// console.log('windowposition: ' + Math.floor(windowPosition));
+		// console.log('testimonialsPosition: ' + testimonialsPosition);
+		// console.log('windowposition: ' + windowPosition);
 	});
 });

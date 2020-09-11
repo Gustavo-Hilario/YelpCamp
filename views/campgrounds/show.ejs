@@ -30,18 +30,18 @@
 						<em>Submitted By: <%= campground.author.username %></em>
 					</p>
 
-					<!-- Em app.js colocamos que em cada pรกgina existirรก um currentUser, podemos usar isso aqui -->
 					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
 					<div class="ownerButtons d-flex-inline float-right mb-2">
-						<p class="d-inline">
-							<a href="/campgrounds/<%= campground._id %>/edit"><button
-									class="editButton btn">Edit</button></a>
-						</p>
-						
+						<button class="btn btn-sm btn-warning">
+							<a href="/campgrounds/<%= campground._id %>/edit" class="text-white">
+								Edit
+							</a>
+						</button>
+
 						<!-- DELETE CAMPGROUND FORM  -->
 						<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" class="d-inline"
 							id="deleteCampgroundForm">
-							<button type="button" class="btn btn-danger" data-toggle="modal"
+							<button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
 								data-target="#deleteCampground">
 								Delete
 							</button>
@@ -95,21 +95,16 @@
 							</div>
 							<p class="commentText text-justify"><%= comment.text %></p>
 							<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-							<p class="d-inline">
-								<a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit">
-									<button class="btn btn-sm editButton">Edit</button>
+							<button class="btn btn-sm btn-warning">
+								<a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="text-white">
+									Edit
 								</a>
-							</p>
+							</button>
 							<form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE"
 								method="POST" class="d-inline" id="formDeleteCommentID<%= comment._id %>">
-								<!--type button is important not submit the form -->
-								<button type="button" class="dialogOpener btn btn-sm"
-									id="<%= comment._id %>">Delete</button>
-								<div id="dialog<%= comment._id %>" class="dialog" title="Delete Comment">
-									<p>
-										Are you sure that you want to delete this comment?
-									</p>
-								</div>
+								<button type="submit" class="btn btn-danger btn-sm">
+									Delete
+								</button>
 							</form>
 							<% }; %>
 						</div>

@@ -1,60 +1,24 @@
-/* SECTION ADVANTAGES */
 body{
 	overflow-x: hidden;
 }
 
-div#topCampgrounds{
-	margin-top: 200px;
-}
-
+/* SECTION ADVANTAGES */
 div#advantages div.row{
 	height: 300px;
-}
-
-div#advantagesRow1 div:nth-last-of-type(2) {
-	width: 100%; 
-	height: 100%; 
-	background-image: url("../../img/guitar_camping.jpg"); 
-	background-repeat: no-repeat; 
-	background-size: contain; 
-	background-position: center;
-}
-
-div#advantagesRow3 div:nth-last-of-type(2) {
-	width: 100%; 
-	height: 100%; 
-	background-image: url("../../img/girl-with-flowers.jpg"); 
-	background-repeat: no-repeat; 
-	background-size: contain; 
-	background-position: center;
 }
 
 div#advantagesRow2{
 	background-color: #FFF2EA;
 }
 
-div#advantagesRow2 div:nth-child(2){
-	width: 100%; 
-	height: 100%; 
-	background-image: url('../../img/cat_dog.jpg'); 
-	background-repeat: no-repeat; 
-	background-size: contain; 
-	background-position: center;
-}
-
-div#advantagesRow4 div:nth-child(2){
-	width: 100%; 
-	height: 100%; 
-	background-image: url('../../img/lyon-bear.jpg'); 
-	background-repeat: no-repeat; 
-	background-size: contain; 
-	background-position: center;
-}
-
 div#advantagesRow4{
 	background-color: #EBF0F1;
 }
 
+/* SECTION TOP CAMPGROUNDS */
+div#topCampgrounds{
+	margin-top: 200px;
+}
 /* CAMPGROUND CARDS */
 img.campground-img{
 	opacity:0.9;
@@ -90,9 +54,7 @@ div#clientsTestimonials{
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-	div#advantages div.row{
-		height: 800px;
-	}
+	
 }
 
 /* Medium devices (tablets, 768px and up) */

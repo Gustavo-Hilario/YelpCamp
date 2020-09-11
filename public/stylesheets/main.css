@@ -1,16 +1,16 @@
 body{
-	color: #523906;
+	color: #2B3163;
 	font-family: 'Recursive', sans-serif;
 }
 
 button{
-	background-color: #CDB30C;
-	color: #62760C;
+	background-color: #2B3163;
+	color: #CDB30C;
 }
 
 button:hover{
-	background-color: #62760C;
-	color: #CDB30C;
+	background-color: #CDB30C;
+	color: #2B3163;
 }
 
 nav.navbar{

@@ -92,7 +92,24 @@
 									</h4>
 								</div>
 								<div class="col-6 d-flex justify-content-end">
-									<span><em><%= comment.date.getDate() %>/<%= comment.date.getMonth() %>/<%= comment.date.getFullYear() %></em></span>
+									<% var currentDate = new Date();
+									   var diffSeconds = Math.round((currentDate.getTime() - comment.date.getTime())/1000);
+									   var diffMinutes = Math.round(diffSeconds / 60);
+									   var diffHours = Math.floor(diffSeconds / (60 * 60));
+									   var diffDays = Math.floor(diffSeconds / (60 * 60 * 24));
+
+									   if(diffSeconds < 60){ %>
+											<span><em><%= diffSeconds %> seconds ago</em></span>
+										<%} else if(diffMinutes < 60) { %>
+											<span><em><%= diffMinutes %> minutes ago</em></span>
+										<% } else if(diffHours < 24) { %>
+											<span><em><%= diffHours %> hours ago</em></span>
+										<% } else if(diffDays < 365) { %>
+											<span><em><%= diffDays %> days ago</em></span>
+										<% } else { %>
+											<span><em><%= Math.floor(diffDays / 365) %> years ago</em></span>
+										<% } %>%>
+
 								</div>
 							</div>
 							<p class="commentText text-justify"><%= comment.text %></p>

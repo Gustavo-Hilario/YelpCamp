@@ -56,7 +56,7 @@ router.post("/register", function(req, res){
 // LOGUIN LOGIC
 router.get("/loguin", function(req, res){
 	res.render("loguin", {
-		styles: [], 
+		styles: ["/stylesheets/loguin.css"], 
 		scripts: { header: [] , footer: [] }
 	});
 });

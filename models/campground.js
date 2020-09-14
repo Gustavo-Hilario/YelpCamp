@@ -15,10 +15,10 @@ var campgroundSchema = new mongoose.Schema({
 			username: String
 		},
 	comments: [
-	{  //Using comments by Referencing
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "Comment"
-	}
+		{  //Using comments by Referencing
+			type: mongoose.Schema.Types.ObjectId,
+			ref: "Comment"
+		}
    	]
 });
 

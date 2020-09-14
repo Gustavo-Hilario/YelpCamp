@@ -72,6 +72,8 @@
 					<% }; %>
 				</div>
 			</div>
+
+			<!-- COMMENTS SPTACE -->
 			<div class="card card-comments border-secondary border-top border-bottom mt-4 bg-light">
 				<div class="text-right mx-2 my-2">
 					<a class="newCommentButton btn" href="/campgrounds/<%= campground._id %>/comments/new">
@@ -90,7 +92,7 @@
 									</h4>
 								</div>
 								<div class="col-6 d-flex justify-content-end">
-									<span><em>10 days ago</em></span>
+									<span><em><%= comment.date.getDate() %>/<%= comment.date.getMonth() %>/<%= comment.date.getFullYear() %></em></span>
 								</div>
 							</div>
 							<p class="commentText text-justify"><%= comment.text %></p>

@@ -17,7 +17,7 @@ $(document).ready(function(){
 		windowPosition = Math.floor(window.scrollY + window.innerHeight);
 
 		if(windowPosition >= testimonialsPosition){
-			$('#rowOfTestiomonials').show("drop", 2000);
+			$('#rowOfTestiomonials').show("fold", 1000);
 		}
 		// console.log('testimonialsPosition: ' + testimonialsPosition);
 		// console.log('windowposition: ' + windowPosition);

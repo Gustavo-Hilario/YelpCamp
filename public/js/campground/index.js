@@ -13,7 +13,6 @@ $(document).ready(function(){
 	var windowPosition = 0;
 	$('#rowOfTestiomonials').hide();
 
-
 	$(window).scroll( () => {
 		windowPosition = Math.floor(window.scrollY + window.innerHeight);
 

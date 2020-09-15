@@ -7,19 +7,4 @@ $(document).ready(function(){
 	$("div.card").mouseout(function(){
 		$(this).find("p.card-text").css("font-weight", "");
 	});
-
-	// Testimonials showing effect ...
-	var testimonialsPosition = Math.floor($('#clientsTestimonials').position().top + $('#clientsTestimonials').innerHeight()/2);
-	var windowPosition = 0;
-	$('#rowOfTestiomonials').hide();
-
-	$(window).scroll( () => {
-		windowPosition = Math.floor(window.scrollY + window.innerHeight);
-
-		if(windowPosition >= testimonialsPosition){
-			$('#rowOfTestiomonials').show("fold", 1500);
-		}
-		// console.log('testimonialsPosition: ' + testimonialsPosition);
-		// console.log('windowposition: ' + windowPosition);
-	});
 });

@@ -4,6 +4,14 @@ body{
 
 /* SECTION ADVANTAGES */
 div#advantages div.row{
+	height: 500px;
+}
+
+div#advantagesRow1 div.text{
+	height: 200px;
+}
+
+div#advantagesRow1 div.image{
 	height: 300px;
 }
 
@@ -17,8 +25,9 @@ div#advantagesRow4{
 
 /* SECTION TOP CAMPGROUNDS */
 div#topCampgrounds{
-	margin-top: 200px;
+	margin-top: 50px;
 }
+
 /* CAMPGROUND CARDS */
 img.campground-img{
 	opacity:0.9;
@@ -59,12 +68,17 @@ div#clientsTestimonials{
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
-	div#topCampgrounds{
-		margin-top: 150px;
-	}
 	div#advantages div.row{
 		height: 300px;
 	}
+	div#advantagesRow1 div.text{
+		height: 100%;
+	}	
+
+	div#advantagesRow1 div.image{
+		height: 100%;
+	}
+
 	div#clientsTestimonials{
 		height: 300px;
 	}

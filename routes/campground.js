@@ -7,7 +7,7 @@ var middleware = require("../middleware");
 // =================================================================
 // CAMPGROUND PAGE
 // =================================================================
-router.get("/", function(req, res){
+router.get("/", middleware.isLoggedin, function(req, res){
 	//Get all Campgrounds from DB
 	Campground.find({}, function(err, allCampgrounds){
 		if(err){

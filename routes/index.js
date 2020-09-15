@@ -58,7 +58,7 @@ router.post("/register", function(req, res){
 	User.register(newUser, password, function(err, user){
 		if(err){
 			req.flash("error", err.message);
-			res.redirect("user/register");
+			res.redirect("/register");
 		}
 		passport.authenticate("local")(req, res, function(){
 			req.flash("success", "Welcome to YelpCamp " + user.username);
@@ -78,7 +78,7 @@ router.get("/loguin", function(req, res){
 //LOGUIN USING A MILDWARE + USE A NEW STRATEGY FROM PASSPORT-LOCAL AND AUTHENTICATE USER
 router.post("/loguin", passport.authenticate("local", {
 	successRedirect: "/secret",
-	failureRedirect: "user/loguin"
+	failureRedirect: "/loguin"
 	}), function(req, res){
 });
 

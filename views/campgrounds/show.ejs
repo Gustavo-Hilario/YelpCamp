@@ -1,9 +1,9 @@
 <% include ../partials/header %>
 
-<div class="container">
+<div class="container-fluid p-2 m-0">
 	<div class="row">
-		<div class="col-md-3">
-			<p class="lead"><em><a href="/campgrounds">YelpCamp</a></em></p>
+		<div class="col-12 p-3 order-2 my-3 col-md-3 order-md-1 my-md-0 offset-md-0">
+			<p class="lead text-center d-none d-md-block"><em><a href="/campgrounds">YelpCamp</a></em></p>
 			<div class="yelpCampInfo list-group mb-sm-3">
 				<li class="list-group-item activeItem">Info 1</li>
 				<li class="list-group-item">Info 2</li>
@@ -11,9 +11,15 @@
 				<li class="list-group-item">Info 4</li>
 			</div>
 		</div>
-		<div class="col-md-9">
+
+		<div class="col-12 p-3 order-1 col-md-9 order-md-2">
 			<div class="card card-image border-secondary border-top border-bottom bg-light">
-				<img class="img-responsive" src="<%= campground.image %>" alt="<%= campground.name %>">
+				<a href="/campgrounds/<%= campground._id %>">
+					<div id="campground-image" style="background-image: url(<%= campground.image %>);
+		 background-repeat: no-repeat; background-size: cover; background-position: center;">
+					</div>
+				</a>
+
 				<div class="mx-2">
 					<div class="row mt-3">
 						<div class="col-12 col-md-7">
@@ -72,9 +78,12 @@
 					<% }; %>
 				</div>
 			</div>
-
-			<!-- COMMENTS SPTACE -->
-			<div class="card card-comments border-secondary border-top border-bottom mt-4 bg-light">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 p-3 order-3 col-md-9 offset-md-3">
+			<!-- COMMENTS SPACE -->
+			<div class="card card-comments border-secondary border-top border-bottom bg-light">
 				<div class="text-right mx-2 my-2">
 					<a class="newCommentButton btn" href="/campgrounds/<%= campground._id %>/comments/new">
 						New Comment
@@ -93,29 +102,30 @@
 								</div>
 								<div class="col-6 d-flex justify-content-end">
 									<% var currentDate = new Date();
-									   var diffSeconds = Math.round((currentDate.getTime() - comment.date.getTime())/1000);
-									   var diffMinutes = Math.round(diffSeconds / 60);
-									   var diffHours = Math.floor(diffSeconds / (60 * 60));
-									   var diffDays = Math.floor(diffSeconds / (60 * 60 * 24));
-
-									   if(diffSeconds < 60){ %>
-											<span><em><%= diffSeconds %> seconds ago</em></span>
-										<%} else if(diffMinutes < 60) { %>
-											<span><em><%= diffMinutes %> minutes ago</em></span>
-										<% } else if(diffHours < 24) { %>
-											<span><em><%= diffHours %> hours ago</em></span>
-										<% } else if(diffDays < 365) { %>
-											<span><em><%= diffDays %> days ago</em></span>
-										<% } else { %>
-											<span><em><%= Math.floor(diffDays / 365) %> years ago</em></span>
-										<% } %>%>
+												   var diffSeconds = Math.round((currentDate.getTime() - comment.date.getTime())/1000);
+												   var diffMinutes = Math.round(diffSeconds / 60);
+												   var diffHours = Math.floor(diffSeconds / (60 * 60));
+												   var diffDays = Math.floor(diffSeconds / (60 * 60 * 24));
+			
+												   if(diffSeconds < 60){ %>
+									<span><em><%= diffSeconds %> seconds ago</em></span>
+									<%} else if(diffMinutes < 60) { %>
+									<span><em><%= diffMinutes %> minutes ago</em></span>
+									<% } else if(diffHours < 24) { %>
+									<span><em><%= diffHours %> hours ago</em></span>
+									<% } else if(diffDays < 365) { %>
+									<span><em><%= diffDays %> days ago</em></span>
+									<% } else { %>
+									<span><em><%= Math.floor(diffDays / 365) %> years ago</em></span>
+									<% } %>%>
 
 								</div>
 							</div>
 							<p class="commentText text-justify"><%= comment.text %></p>
 							<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
 							<button class="btn btn-sm btn-warning">
-								<a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="text-white">
+								<a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit"
+									class="text-white">
 									Edit
 								</a>
 							</button>
@@ -133,6 +143,7 @@
 			</div>
 		</div>
 	</div>
+
 </div>
 
 <% include ../partials/footer %>

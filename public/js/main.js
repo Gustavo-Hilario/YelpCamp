@@ -8,7 +8,7 @@ $(document).ready(function () {
 		// SHOW/HIDE NAVBAR WHEN SCROLL UP/DOWN LOGIC
 		$(window).scroll(function () {
 			var currentYPosition = window.pageYOffset;
-			if (currentYPosition > maxYPositionwithoutNavbar) {
+			if (currentYPosition >= maxYPositionwithoutNavbar) {
 				$("#topCampgrounds").css("margin-top", "200px");
 				$("nav").removeClass("d-none");
 			} else {

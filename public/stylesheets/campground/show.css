@@ -1,3 +1,7 @@
+body{
+	overflow-x: hidden;
+}
+
 /* RESPONSIVE IMAGE */
 div.yelpCampInfo li{
 	font-weight: 300;
@@ -12,9 +16,13 @@ div.yelpCampInfo li.activeItem{
 	background-color: #2B3163;
 }
 
-div.card img.img-responsive{
-	min-height:400px;
-	max-height:500px;
+div#campground-image{
+	height:300px;
+	opacity: 0.98;
+}
+
+div#campground-image:hover{
+	opacity: 1;
 }
 
 /* CARD BODY */
@@ -59,9 +67,27 @@ a.newCommentButton:hover{
 	color: #CDB30C;
 }
 
-@media only screen and (max-width: 768px){
-	div.card img.img-responsive{
-		min-height:200px;
-		max-height:300px;
-	}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	div#campground-image{
+		height:400px;
+	} 
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	div#campground-image{
+		height:450px;
+	} 
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	div#campground-image{
+		height:500px;
+	} 
 }

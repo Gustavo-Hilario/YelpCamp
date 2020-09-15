@@ -1,0 +1,176 @@
+<% include ./partials/header%>
+
+<!-- NAVBAR => transparent over ADVANTAGES, when scroll down it will have a color of #2B3163-->
+
+<!-- ADVANTAGES OF YELCAMP => 4/2 ROW/COL SAYING ADVANTAGES OF YELPCAMP -->
+<div class="container-fluid p-0" id="advantages">
+	<div class="row mx-0 mb-md-5" id="advantagesRow1">
+		<div class="col-12 h-100 w-100 order-2 mt-n1 pb-5 col-md-6 order-md-1 p-md-0 m-md-0" style="background-image: url('../../img/guitar_camping.jpg'); background-repeat: no-repeat; 
+			 background-size: contain; background-position: center;">
+		</div>
+
+		<div class="col-12 order-1 mx-2 mt-2 text-center col-md-6 p-md-0 m-md-0 d-md-flex align-items-center"
+			style="font-family: 'Rock Salt', cursive;">
+			<div>
+				<h1 class="display-4">YelpCamp</h1>
+				<p class="mt-5">
+					View our hand-picked campgrounds from all over the world
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow2">
+		<div class="col-12 order-2 col-md-6 order-md-1 d-flex align-items-center justify-content-center"
+			style="font-family: 'Rock Salt', cursive;">
+			<div>
+				<h1 class="display-4">YelpCamp</h1>
+				<p class="mt-5">
+					Here your pet will have a great time
+				</p>
+			</div>
+		</div>
+
+		<div class="col-12 h-100 w-100 order-1 col-md-6 order-md-2" style="background-image: url('../../img/cat_dog.jpg'); 
+			 background-repeat: no-repeat; background-size: contain; background-position: center;">
+		</div>
+	</div>
+
+	<div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow3">
+		<div class="col-12 col-md-6 p-md-0 m-md-0 h-100 w-100"
+			style="background-image: url('../../img/girl-with-flowers.jpg'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+		</div>
+
+		<div class="col-12 col-md-6 p-md-0 m-md-0 d-flex text-center align-items-center"
+			style="color: #2B3163; font-family: 'Rock Salt', cursive;">
+			<div>
+				<h1 class="display-4">YelpCamp</h1>
+				<p class="mt-5">
+					View our hand-picked campgrounds from all over the world
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mx-0 mb-md-5 d-none d-md-flex" id="advantagesRow4">
+		<div class="col-12 order-2 col-md-6 order-md-1 d-flex align-items-center justify-content-center"
+			style="font-family: 'Rock Salt', cursive;">
+			<div>
+				<h1 class="display-4">YelpCamp</h1>
+				<p class="mt-5">
+					Here your pet will have a great time
+				</p>
+			</div>
+		</div>
+
+		<div class="col-12 h-100 w-100 order-1 col-md-6 order-md-2"
+			style="background-image: url('../../img/lyon-bear.jpg'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+		</div>
+	</div>
+</div>
+
+<!-- TOP RATED CAMPGROUNDS =>  -->
+<div class="container mb-5" id="topCampgrounds">
+	<div class="row d-flex justify-content-center">
+		<% campgrounds.forEach(function(campground){ %>
+		<div class="col-lg-3 col-md-4 col-sm-6 pb-4 d-flex justify-content-center">
+			<div class="card shadow " style="width: 18rem;">
+				<img src="<%= campground.image %>" class="campground-img card-img-top" alt="<%= campground.name %>">
+				<div class="card-body">
+					<h5 class="card-title text-center"><strong><%= campground.name %></strong></h5>
+					<p class="card-text">
+						<% if(campground.description.length > 100){ %>
+						<%= campground.description.substring(100, 0) + " ..." %>
+						<%  } else { %>
+						<%= campground.description %>
+						<% } %>
+					</p>
+					<!--The ID already exist because it is created automatically-->
+					<a href="/campgrounds/<%= campground._id %>" class="btn">See more</a>
+				</div>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+</div>
+<!-- DEPOIMENTS => 1 ROW OF 3 DEPOIMENTS -->
+<div class="row mb-5">
+	<div class="col-12 col-md-10 offset-md-1">
+		<h1 class="text-center" style="font-family: 'Rock Salt', cursive;">
+			What our clients are saying about us
+		</h1>
+	</div>
+</div>
+
+<div class="container-fluid shadow" id="clientsTestimonials" style="background-image: url('./img/trees.png'); 
+			background-repeat: no-repeat; background-size: cover; background-position: center;">
+	<div class="row h-100 d-flex justify-content-center" style="background-color: rgba(0, 0, 0, 0.8);">
+		<div class="row w-100" id="rowOfTestiomonials">
+			<div class="col-12 col-sm-10 offset-sm-1 col-md-6 p-md-0 offset-md-0 col-xl-4 d-flex justify-content-center align-items-center">
+				<div class="h-75 w-75 bg-transparent rounded position-relative">
+					<span class="text-white position-absolute mt-n4 ml-n3"
+						style="top: 0; left: 0; font-size: 5em;font-family: 'Rock Salt', cursive;">
+						"
+					</span>
+					<div class="m-3 p-3 h-75 rounded position-relative">
+						<p class="text-center text-justify text-white"
+							style="word-wrap: break-word; font-family: 'Rock Salt', cursive;">
+							I have been using YelpCamp for a couple of years. I always found beatiful places to spend the weekend with my friends.
+						</p>
+						<div class="position-absolute" style="bottom: -40px; right: -40px; height: 80px; width: 80px; border-radius: 50%; background-image: url('./img/user1.jpg'); 
+							 background-repeat: no-repeat; background-size: cover; background-position: top;">
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="col-12 col-sm-10 offset-sm-1 col-md-6 p-md-0 offset-md-0 col-xl-4 d-flex justify-content-center align-items-center">
+				<div class="h-75 w-75 bg-transparent rounded position-relative">
+					<span class="text-white position-absolute mt-n4 ml-n3"
+						style="top: 0; left: 0; font-size: 5em;font-family: 'Rock Salt', cursive;">
+						"
+					</span>
+					<div class="m-3 p-3 h-75 rounded position-relative">
+						<p class="text-center text-justify text-white"
+							style="word-wrap: break-word; font-family: 'Rock Salt', cursive;">
+							I have been using YelpCamp for a couple of years. I always found beatiful places to spend the weekend with my
+							friends.
+						</p>
+						<div class="position-absolute" style="bottom: -40px; right: -40px; height: 80px; width: 80px; border-radius: 50%; background-image: url('./img/user2.jpg'); 
+							 background-repeat: no-repeat; background-size: cover; background-position: top;">
+						</div>
+					</div>
+				
+				</div>
+			</div>
+			<div class="d-none p-0 d-xl-flex col-xl-4 justify-content-center align-items-center">
+				<div class="h-75 w-75 bg-transparent rounded position-relative">
+					<span class="text-white position-absolute mt-n4 ml-n3"
+						style="top: 0; left: 0; font-size: 5em;font-family: 'Rock Salt', cursive;">
+						"
+					</span>
+					<div class="m-3 p-3 h-75 rounded position-relative">
+						<p class="text-center text-justify text-white"
+							style="word-wrap: break-word; font-family: 'Rock Salt', cursive;">
+							I have been using YelpCamp for a couple of years. I always found beatiful places to spend the weekend with my
+							friends.
+						</p>
+						<div class="position-absolute" style="bottom: -40px; right: -40px; height: 80px; width: 80px; border-radius: 50%; background-image: url('./img/user3.jpg'); 
+							 background-repeat: no-repeat; background-size: cover; background-position: top;">
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- FOOTER => -->
+
+
+
+
+
+
+<% include ./partials/footer%>

@@ -11,6 +11,20 @@ router.get("/", function(req, res){
 		scripts: { header: [] , footer: [] }});
 });
 
+router.get("/home", function (req, res) {
+	//Get all Campgrounds from DB
+	Campground.find({}, function (err, allCampgrounds) {
+		if (err) {
+			console.log(err);
+		} else {
+			res.render("home", { campgrounds: allCampgrounds, currentUser: req.user,
+				styles: ["/stylesheets/home.css"],
+				scripts: { header: ["JqueryUI"], footer: ["/js/home.js"] }
+			});
+		}
+	});
+});
+
 // =================================================================
 // AUTHENTICATION ROUTES
 // =================================================================
@@ -22,7 +36,7 @@ router.get("/secret", middleware.isLoggedin, function(req, res){
 		if(err){
 			console.log(err);
 		} else{
-			res.render("secret", { campgrounds: allcampgrounds,
+			res.render("user/secret", { campgrounds: allcampgrounds,
 			styles: ["/stylesheets/user/secret.css"], 
 			scripts: { header: ["JqueryUI"] , footer: ["/js/user/secret.js"] }
 			});
@@ -32,7 +46,7 @@ router.get("/secret", middleware.isLoggedin, function(req, res){
 
 // USER REGISTRATION
 router.get("/register", function(req, res){
-	res.render("register", {
+	res.render("user/register", {
 		styles: [], 
 		scripts: { header: [] , footer: [] }
 	});
@@ -44,7 +58,7 @@ router.post("/register", function(req, res){
 	User.register(newUser, password, function(err, user){
 		if(err){
 			req.flash("error", err.message);
-			res.redirect("/register");
+			res.redirect("user/register");
 		}
 		passport.authenticate("local")(req, res, function(){
 			req.flash("success", "Welcome to YelpCamp " + user.username);
@@ -55,7 +69,7 @@ router.post("/register", function(req, res){
 
 // LOGUIN LOGIC
 router.get("/loguin", function(req, res){
-	res.render("loguin", {
+	res.render("user/loguin", {
 		styles: ["/stylesheets/loguin.css"], 
 		scripts: { header: [] , footer: [] }
 	});
@@ -63,8 +77,8 @@ router.get("/loguin", function(req, res){
 
 //LOGUIN USING A MILDWARE + USE A NEW STRATEGY FROM PASSPORT-LOCAL AND AUTHENTICATE USER
 router.post("/loguin", passport.authenticate("local", {
-	successRedirect: "/campgrounds",
-	failureRedirect: "/loguin"
+	successRedirect: "/secret",
+	failureRedirect: "user/loguin"
 	}), function(req, res){
 });
 
@@ -72,7 +86,7 @@ router.post("/loguin", passport.authenticate("local", {
 router.get("/logout", function(req, res){
 	req.logout();
 	req.flash("success", "Logged you out!");
-	res.redirect("/");
+	res.redirect("/home");
 });
 
 module.exports = router;

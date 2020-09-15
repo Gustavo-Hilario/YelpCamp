@@ -1,0 +1,85 @@
+body{
+	overflow-x: hidden;
+}
+
+/* SECTION ADVANTAGES */
+div#advantages div.row{
+	height: 300px;
+}
+
+div#advantagesRow2{
+	background-color: #FFF2EA;
+}
+
+div#advantagesRow4{
+	background-color: #EBF0F1;
+}
+
+/* SECTION TOP CAMPGROUNDS */
+div#topCampgrounds{
+	margin-top: 200px;
+}
+/* CAMPGROUND CARDS */
+img.campground-img{
+	opacity:0.9;
+}
+
+img.campground-img:hover{
+	opacity:1;
+}
+
+div.card-body h5.card-title{
+	font-family: 'Montserrat', sans-serif;	
+}
+
+div.card-body p.card-text{
+	font-weight: 300;	
+}
+
+div.card-body a{
+	background-color: #2B3163;
+	color: #CDB30C;
+}
+
+div.card-body a:hover{
+	background-color: #CDB30C;
+	color: #2B3163;
+}
+
+/* TESTIMONIALS */
+div#clientsTestimonials{
+	height: 500px;
+	overflow-x: hidden;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+	div#topCampgrounds{
+		margin-top: 150px;
+	}
+	div#advantages div.row{
+		height: 300px;
+	}
+	div#clientsTestimonials{
+		height: 300px;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+	div#advantages div.row{
+		height: 400px;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+	div#advantages div.row{
+		height: 450px;
+	}
+}

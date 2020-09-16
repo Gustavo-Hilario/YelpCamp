@@ -47,7 +47,7 @@ router.get("/secret", middleware.isLoggedin, function(req, res){
 // USER REGISTRATION
 router.get("/register", function(req, res){
 	res.render("user/register", {
-		styles: [], 
+		styles: ["/stylesheets/register.css"], 
 		scripts: { header: [] , footer: [] }
 	});
 });

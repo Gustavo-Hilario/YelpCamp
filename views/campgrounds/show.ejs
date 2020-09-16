@@ -3,7 +3,11 @@
 <div class="container-fluid p-2 m-0">
 	<div class="row">
 		<div class="col-12 p-3 order-2 my-3 col-md-3 order-md-1 my-md-0 offset-md-0">
-			<p class="lead text-center d-none d-md-block"><em><a href="/campgrounds">YelpCamp</a></em></p>
+			<p class="lead text-center d-none d-md-block">
+				<strong>
+					<a href="/campgrounds">YelpCamp</a>
+				</strong>
+			</p>
 			<div class="yelpCampInfo list-group mb-sm-3">
 				<li class="list-group-item activeItem">Info 1</li>
 				<li class="list-group-item">Info 2</li>
@@ -15,8 +19,8 @@
 		<div class="col-12 p-3 order-1 col-md-9 order-md-2">
 			<div class="card card-image border-secondary border-top border-bottom bg-light">
 				<a href="/campgrounds/<%= campground._id %>">
-					<div id="campground-image" style="background-image: url(<%= campground.image %>);
-		 background-repeat: no-repeat; background-size: cover; background-position: center;">
+					<div id="campground-image" style="background-image: url('<%= campground.image %>');
+		 				 background-repeat: no-repeat; background-size: cover; background-position: center;">
 					</div>
 				</a>
 
@@ -32,7 +36,7 @@
 						</div>
 					</div>
 					<p class="campgroundDescription text-justify"><%= campground.description %></p>
-					<p class="campgroundauthor">
+					<p class="campgroundauthor text-right">
 						<em>Submitted By: <%= campground.author.username %></em>
 					</p>
 

@@ -2,6 +2,10 @@ body{
 	overflow-x: hidden;
 }
 
+a{
+	color: inherit;
+}
+
 /* RESPONSIVE IMAGE */
 div.yelpCampInfo li{
 	font-weight: 300;
@@ -50,6 +54,7 @@ p{
 
 p.campgroundauthor{
 	font-weight: 300;
+	font-size: 0.9em;
 }
 
 h4.commentsDisplay{

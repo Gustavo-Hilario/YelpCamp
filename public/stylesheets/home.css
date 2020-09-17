@@ -2,6 +2,16 @@ body{
 	overflow-x: hidden;
 }
 
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover{
+	text-decoration: none;
+	color: inherit;
+}
+
 /* SECTION ADVANTAGES */
 div#advantages div.row{
 	height: 500px;

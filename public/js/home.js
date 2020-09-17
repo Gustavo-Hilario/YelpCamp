@@ -8,7 +8,7 @@ $(document).ready(function(){
 		$(this).find("p.card-text").css("font-weight", "");
 	});
 
-	// Testimonials showing effect ...
+	/* // Testimonials showing effect ...
 	var testimonialsPosition = Math.floor($('#clientsTestimonials').position().top + $('#clientsTestimonials').innerHeight()/2);
 	var windowPosition = 0;
 	$('#rowOfTestiomonials').hide();
@@ -21,5 +21,5 @@ $(document).ready(function(){
 		}
 		// console.log('testimonialsPosition: ' + testimonialsPosition);
 		// console.log('windowposition: ' + windowPosition);
-	});
+	}); */
 });

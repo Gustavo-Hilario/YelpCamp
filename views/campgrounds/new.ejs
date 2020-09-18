@@ -1,7 +1,7 @@
 <% include ../partials/header%>
 
-<div class="container">
-		<div class="createNewCampground container w-75 py-2">
+<div class="container my-3">
+	<div class="w-75 p-2 mx-auto" id="createNewCampground">
 
 		<h1 class="d-sm-none d-block display-4 text-center">Create a New Campground</h1>
 		<h1 class="d-none d-sm-block display-3 text-center">Create a New Campground</h1>
@@ -33,8 +33,8 @@
 			<div class="row">
 				<div class="col-md-12 d-flex justify-content-center">
 					<div class="form-group w-100">
-						<label for="campground" class="text-uppercase"><strong>Campground Description</strong></label>
-						<textarea type="text" name="description" class="form-control" placeholder="Campground Description" rows="5" spellcheck="true"></textarea>
+						<label for="campground-description" class="text-uppercase"><strong>Campground Description</strong></label>
+						<textarea type="text" name="description" id="campground-description" class="form-control" placeholder="Campground Description" rows="5" spellcheck="true"></textarea>
 					</div>
 				</div>
 			</div>
@@ -43,13 +43,13 @@
 				<div class="col-md-3"></div>
 				<div class="col-md-3 d-flex justify-content-center">
 					<div class="form-group">
-						<button type="submit" name="submit" class="btn-block btn-lg">SUBMIT</button>
+						<button type="submit" name="submit" class="btn btn-success">Submit</button>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="d-flex justify-content-center">
 						<div class="form-group">
-							<a href="/campgrounds" class="goBackButton btn btn-block btn-lg">GO BACK <i class="fas fa-undo-alt text-dark"></i></a>
+							<a href="/campgrounds" class="btn btn-warning text-white">Go Back <i class="fas fa-undo-alt text-dark"></i></a>
 						</div>
 					</div>
 				</div>

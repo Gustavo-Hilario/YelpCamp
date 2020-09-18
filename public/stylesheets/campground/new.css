@@ -1,48 +1,22 @@
-div.createNewCampground{
-	border: 2px solid #CDB30C;
+div#createNewCampground{
+	border: 2px solid #2B3163;
 	opacity: 0.9;
 }
 
-div.createNewCampground:hover{
-	border: 2px solid #62760C;
+div#createNewCampground:hover{
 	opacity: 1;
 }
 
 h1{
 	font-family: 'Montserrat', sans-serif;
-	color: #523906;	
 }
 
 label{
 	font-weight: 300;
-	color: #535204;	 
 }
 
 input.form-control:focus , textarea.form-control:focus{
-	color: #523906;
-    border-color: #535204;
+    border-color: #2B3163;
     outline: 0;
-    box-shadow: 0 0 0 0.1rem #CDB30C ;
-}
-
-button[type="submit"]{
-	font-weight: 500;
-	color: #CDB30C;
-	background-color: #62760C;
-}
-
-button[type="submit"]:hover{
-	background-color: #CDB30C;
-	color: #62760C;
-}
-
-a.goBackButton{
-	font-weight: 500;
-	color: #535204;
-	background-color: #523906;
-}
-
-a.goBackButton:hover{
-	background-color: #535204;
-	color: #523906;	
+    box-shadow: 0 0 0 0.1rem #2B3163 ;
 }

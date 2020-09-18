@@ -1,123 +1,124 @@
 <% include ../partials/header %>
 
-<div class="container-fluid mx-4">
-	<!-- CAMPGROUND NAME+PRICE -->
-	<div class="row">
-		<div class="col-4 offset-1 text-center mt-2">
-			<a href="/campgrounds/<%= campground._id %>">
-				<h2 class="campgroundName"><strong><%= campground.name %></strong></h2>
-			</a>
-		</div>
-		<div class="col-4 offset-1 text-center mt-2">
-			<h2 class="campgroundPrice">$<%= campground.price %>/night</h2>
-		</div>
-	</div>
-
-	<!-- CAMPGROUND IMAGE + FEATURES -->
-	<div class="row mt-5" style="height: 600px;">
-		<!-- IMAGE -->
-		<div class="col-6 p-0">
-			<div class="d-flex justify-content-center">
+	<div class="container-fluid mx-4">
+		<!-- CAMPGROUND NAME+PRICE -->
+		<div class="row">
+			<div class="col-4 offset-1 text-center mt-2">
 				<a href="/campgrounds/<%= campground._id %>">
-					<div class="shadow-lg border border-secondary" id="campground-image" style="height: 600px; width: 600px; background-image: url('<%= campground.image %>');
-				 	 background-repeat: no-repeat; background-size: cover; background-position: center; border-radius: 50%;">
-					</div>
+					<h2 class="campgroundName"><strong><%= campground.name %></strong></h2>
 				</a>
 			</div>
+			<div class="col-4 offset-1 text-center mt-2">
+				<h2 class="campgroundPrice">$<%= campground.price %>/night</h2>
+			</div>
 		</div>
-		<!-- FEATURES -->
-		<div class="col-6 p-0" style="height: 600px; width: 600px;">
-			<div class="row h-25 w-100 pb-2">
-				<div class="col-12">
-					<h2>Accomodation Type</h2>
-					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2 rounded">
-						<div class="d-flex align-items-center">
-							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+
+		<!-- CAMPGROUND IMAGE + FEATURES -->
+		<div class="row mt-5" style="height: 600px;">
+			<!-- IMAGE -->
+			<div class="col-6 p-0">
+				<div class="d-flex justify-content-center">
+					<a href="/campgrounds/<%= campground._id %>">
+						<div class="shadow-lg border border-secondary" id="campground-image" style="height: 600px; width: 600px; background-image: url('<%= campground.image %>');
+						background-repeat: no-repeat; background-size: cover; background-position: center; border-radius: 50%;">
 						</div>
-						<div class="d-none">
-							<div class="col-2 w-75 h-100 mr-1 rounded">
+					</a>
+				</div>
+			</div>
+			<!-- FEATURES -->
+			<div class="col-6 p-0" style="height: 600px; width: 600px;">
+				<div class="row h-25 w-100 pb-2">
+					<div class="col-12">
+						<h2>Accomodation Type</h2>
+						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2 rounded">
+							<div class="d-flex align-items-center">
+								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
 							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 rounded">
+							<div class="d-none">
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 rounded">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row h-25 w-100 pb-2">
-				<div class="col-12">
-					<h2>Services</h2>
-					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
-						<div class="d-flex align-items-center">
-							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
-						</div>
-						<div class="d-none">
-							<div class="col-2 w-75 h-100 mr-1 rounded">
+				<div class="row h-25 w-100 pb-2">
+					<div class="col-12">
+						<h2>Services</h2>
+						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
+							<div class="d-flex align-items-center">
+								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
 							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 rounded">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row h-25 w-100 pb-2">
-				<div class="col-12">
-					<h2>Environment</h2>
-					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
-						<div class="d-flex align-items-center">
-							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
-						</div>
-						<div class="d-none">
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 rounded">
+							<div class="d-none">
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 rounded">
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row h-25 w-100">
-				<div class="col-12">
-					<h2>Activities</h2>
-					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
-						<div class="d-flex align-items-center">
-							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+				<div class="row h-25 w-100 pb-2">
+					<div class="col-12">
+						<h2>Environment</h2>
+						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
+							<div class="d-flex align-items-center">
+								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+							</div>
+							<div class="d-none">
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 rounded">
+								</div>
+							</div>
 						</div>
-						<div class="d-none">
-							<div class="col-2 w-75 h-100 mr-1 rounded">
+					</div>
+				</div>
+				<div class="row h-25 w-100">
+					<div class="col-12">
+						<h2>Activities</h2>
+						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
+							<div class="d-flex align-items-center">
+								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
 							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 mr-1 rounded">
-							</div>
-							<div class="col-2 w-75 h-100 rounded">
+							<div class="d-none">
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 mr-1 rounded">
+								</div>
+								<div class="col-2 w-75 h-100 rounded">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -125,7 +126,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 
 	<div class="container">
 		<!-- CAMPGROUND DESCRIPTION -->
@@ -183,7 +183,7 @@
 		</div>
 
 		<!-- CAMPGROUND COMMENTS -->
-		<div>
+		<div class="mb-5">
 			<div class="row d-flex align-items-center mb-4">
 				<div class="col-8">
 					<h2 class="text-left m-0">Comments</h2>
@@ -243,9 +243,15 @@
 						</button>
 					</form>
 					<% }; %>
+					<hr>
 				</div>
 				<% }); %>
 			</div>
 		</div>
+	</div>
+	<div class="text-center my-5">
+		<button class="btn btn-dark">
+			<a class="text-white" href="/campgrounds">All Campgrounds</a>
+		</button>
 	</div>
 <% include ../partials/footer %>

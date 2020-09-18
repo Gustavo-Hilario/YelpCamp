@@ -21,7 +21,7 @@ $(document).ready(function () {
 			}
 			previousYPosition = currentYPosition;
 		})
-	} else if ($('div#allCampgrounds').length > 0) {
+	} else if ($('div#campground-index').length > 0) {
 		$("nav").removeClass("d-none");
 		$(window).scroll(function () {
 			var currentYPosition = window.pageYOffset;

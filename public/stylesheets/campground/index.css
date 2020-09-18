@@ -2,8 +2,7 @@ body{
 	overflow-x: hidden;
 }
 
-/* CAMPGROUND CARDS */
-div#allCampgrounds {
+div.container {
 	margin-top: 7em;
 }
 

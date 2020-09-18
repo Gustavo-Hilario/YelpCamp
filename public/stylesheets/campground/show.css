@@ -3,25 +3,15 @@ body{
 }
 
 a{
+	text-decoration: none !important;
+	color: inherit;
+}
+a:hover{
 	color: inherit;
 }
 
 /* RESPONSIVE IMAGE */
-div.yelpCampInfo li{
-	font-weight: 300;
-	color: #CDB30C;
-}
-
-div.yelpCampInfo li:hover{
-	font-weight: 400;
-}
-
-div.yelpCampInfo li.activeItem{
-	background-color: #2B3163;
-}
-
 div#campground-image{
-	height:300px;
 	opacity: 0.98;
 }
 
@@ -29,36 +19,13 @@ div#campground-image:hover{
 	opacity: 1;
 }
 
-/* CARD BODY */
-a{
-	text-decoration: none !important;	
-}
-
-h3, h4{
-	font-family: 'Montserrat', sans-serif;
-}
-
-h3.campgroundName{
-	text-align:center;
-	color: #2B3163;
-}
-
-h3.campgroundPrice{
-	text-align:right;	
-}
-
-p{
-	font-weight: 400;
-	font-size: 1.1em;
+div#campground-description{
+	margin: 150px 0px 100px 0px;
 }
 
 p.campgroundauthor{
 	font-weight: 300;
 	font-size: 0.9em;
-}
-
-h4.commentsDisplay{
-	font-family: 'Montserrat', sans-serif;
 }
 
 /* COMMENTS */
@@ -78,21 +45,12 @@ a.newCommentButton:hover{
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	div#campground-image{
-		height:400px;
-	} 
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	div#campground-image{
-		height:450px;
-	} 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	div#campground-image{
-		height:500px;
-	} 
 }

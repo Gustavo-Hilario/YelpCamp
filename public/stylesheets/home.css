@@ -66,10 +66,6 @@ div.card-body a:hover{
 }
 
 /* TESTIMONIALS */
-div#clientsTestimonials{
-	height: 500px;
-	overflow-x: hidden;
-}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -88,11 +84,6 @@ div#clientsTestimonials{
 	div#advantagesRow1 div.image{
 		height: 100%;
 	}
-
-	div#clientsTestimonials{
-		height: 300px;
-	}
-}
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 

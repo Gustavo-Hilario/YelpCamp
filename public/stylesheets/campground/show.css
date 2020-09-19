@@ -30,13 +30,13 @@ p.campgroundauthor{
 
 /* COMMENTS */
 a.newCommentButton{
-	background-color: #CDB30C;
-	color: #2B3163;
+	background-color: #2B3163;
+	color: #CDB30C;;
 }
 
 a.newCommentButton:hover{
-	background-color: #2B3163;
-	color: #CDB30C;
+	background-color: #CDB30C;
+	color: #2B3163;
 }
 
 /* Small devices (landscape phones, 576px and up) */

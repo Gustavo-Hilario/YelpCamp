@@ -1,124 +1,123 @@
 <% include ../partials/header %>
 
-	<div class="container-fluid mx-4">
-		<!-- CAMPGROUND NAME+PRICE -->
-		<div class="row">
-			<div class="col-4 offset-1 text-center mt-2">
+<div class="container-fluid mx-4">
+	<!-- CAMPGROUND NAME+PRICE -->
+	<div class="row">
+		<div class="col-4 offset-1 text-center mt-2">
+			<a href="/campgrounds/<%= campground._id %>">
+				<h2 class="campgroundName"><strong><%= campground.name %></strong></h2>
+			</a>
+		</div>
+		<div class="col-4 offset-1 text-center mt-2">
+			<h2 class="campgroundPrice">$<%= campground.price %>/night</h2>
+		</div>
+	</div>
+
+	<!-- CAMPGROUND IMAGE + FEATURES -->
+	<div class="row mt-5" style="height: 600px;">
+		<!-- IMAGE -->
+		<div class="col-6 p-0">
+			<div class="d-flex justify-content-center">
 				<a href="/campgrounds/<%= campground._id %>">
-					<h2 class="campgroundName"><strong><%= campground.name %></strong></h2>
+					<div class="shadow-lg border border-secondary" id="campground-image" style="height: 600px; width: 600px; background-image: url('<%= campground.image %>');
+						background-repeat: no-repeat; background-size: cover; background-position: center; border-radius: 50%;">
+					</div>
 				</a>
 			</div>
-			<div class="col-4 offset-1 text-center mt-2">
-				<h2 class="campgroundPrice">$<%= campground.price %>/night</h2>
-			</div>
 		</div>
-
-		<!-- CAMPGROUND IMAGE + FEATURES -->
-		<div class="row mt-5" style="height: 600px;">
-			<!-- IMAGE -->
-			<div class="col-6 p-0">
-				<div class="d-flex justify-content-center">
-					<a href="/campgrounds/<%= campground._id %>">
-						<div class="shadow-lg border border-secondary" id="campground-image" style="height: 600px; width: 600px; background-image: url('<%= campground.image %>');
-						background-repeat: no-repeat; background-size: cover; background-position: center; border-radius: 50%;">
+		<!-- FEATURES -->
+		<div class="col-6 p-0" style="height: 600px; width: 600px;">
+			<div class="row h-25 w-100 pb-2">
+				<div class="col-12">
+					<h2>Accomodation Type</h2>
+					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2 rounded">
+						<div class="d-flex align-items-center">
+							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
 						</div>
-					</a>
+						<div class="d-none">
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 rounded">
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- FEATURES -->
-			<div class="col-6 p-0" style="height: 600px; width: 600px;">
-				<div class="row h-25 w-100 pb-2">
-					<div class="col-12">
-						<h2>Accomodation Type</h2>
-						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2 rounded">
-							<div class="d-flex align-items-center">
-								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+			<div class="row h-25 w-100 pb-2">
+				<div class="col-12">
+					<h2>Services</h2>
+					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
+						<div class="d-flex align-items-center">
+							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+						</div>
+						<div class="d-none">
+							<div class="col-2 w-75 h-100 mr-1 rounded">
 							</div>
-							<div class="d-none">
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 rounded">
-								</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 rounded">
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row h-25 w-100 pb-2">
-					<div class="col-12">
-						<h2>Services</h2>
-						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
-							<div class="d-flex align-items-center">
-								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+			</div>
+			<div class="row h-25 w-100 pb-2">
+				<div class="col-12">
+					<h2>Environment</h2>
+					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
+						<div class="d-flex align-items-center">
+							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+						</div>
+						<div class="d-none">
+							<div class="col-2 w-75 h-100 mr-1 rounded">
 							</div>
-							<div class="d-none">
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 rounded">
-								</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 rounded">
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row h-25 w-100 pb-2">
-					<div class="col-12">
-						<h2>Environment</h2>
-						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
-							<div class="d-flex align-items-center">
-								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
-							</div>
-							<div class="d-none">
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 rounded">
-								</div>
-							</div>
+			</div>
+			<div class="row h-25 w-100">
+				<div class="col-12">
+					<h2>Activities</h2>
+					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
+						<div class="d-flex align-items-center">
+							<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
 						</div>
-					</div>
-				</div>
-				<div class="row h-25 w-100">
-					<div class="col-12">
-						<h2>Activities</h2>
-						<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
-							<div class="d-flex align-items-center">
-								<h3 class="text-center" style="font-weight: 300;">Soon a New Feature</h3>
+						<div class="d-none">
+							<div class="col-2 w-75 h-100 mr-1 rounded">
 							</div>
-							<div class="d-none">
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 mr-1 rounded">
-								</div>
-								<div class="col-2 w-75 h-100 rounded">
-								</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 mr-1 rounded">
+							</div>
+							<div class="col-2 w-75 h-100 rounded">
 							</div>
 						</div>
 					</div>
@@ -126,132 +125,160 @@
 			</div>
 		</div>
 	</div>
+</div>
 
-	<div class="container">
-		<!-- CAMPGROUND DESCRIPTION -->
-		<div class="row" id="campground-description">
-			<h2 class="mb-4">What is <%= campground.name %>?</h2>
-			<div class="col-12 p-0">
-				<div>
-					<p class="campgroundDescription text-justify" style="font-size: 1.3em;"><%= campground.description %></p>
-					<p class="campgroundauthor text-right">
-						<em>Submitted By: <%= campground.author.username %></em>
-					</p>
+<div class="container">
+	<!-- CAMPGROUND DESCRIPTION -->
+	<div class="row" id="campground-description">
+		<h2 class="mb-4">What is <%= campground.name %>?</h2>
+		<div class="col-12 p-0">
+			<div>
+				<p class="campgroundDescription text-justify" style="font-size: 1.3em;"><%= campground.description %>
+				</p>
+				<p class="campgroundauthor text-right">
+					<em>Submitted By: <%= campground.author.username %></em>
+				</p>
 
-					<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-					<div class="ownerButtons d-flex-inline float-right mb-2">
-						<button class="btn btn-sm btn-warning">
-							<a href="/campgrounds/<%= campground._id %>/edit" class="text-white">
-								Edit
-							</a>
-						</button>
-
-						<!-- DELETE CAMPGROUND FORM  -->
-						<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" class="d-inline"
-							id="deleteCampgroundForm">
-							<button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
-								data-target="#deleteCampground">
-								Delete
-							</button>
-
-							<div class="modal fade" id="deleteCampground" tabindex="-1"
-								aria-labelledby="deleteCampgroundLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h5 class="modal-title" id="deleteCampgroundLabel">Delete Campground</h5>
-											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-										</div>
-										<div class="modal-body">
-											Are you sure that you want to delete this campground?
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary"
-												data-dismiss="modal">Close</button>
-											<button type="submit" class="btn btn-danger">Delete</button>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-					<% }; %>
-				</div>
-			</div>
-		</div>
-
-		<!-- CAMPGROUND COMMENTS -->
-		<div class="mb-5">
-			<div class="row d-flex align-items-center mb-4">
-				<div class="col-8">
-					<h2 class="text-left m-0">Comments</h2>
-				</div>
-				<div class="col-4">
-					<div class="text-right">
-						<a href="/campgrounds/<%= campground._id %>/comments/new" class="newCommentButton btn btn-sm"
-							role="button">
-							New Comment
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<div class="row mb-2">
-				<% campground.comments.forEach(function(comment){ %>
-				<div class="col-md-12">
-					<div class="row">
-						<div class="col-6">
-							<h4 class="commentAuthor">
-								<strong><%= comment.author.username %></strong>
-							</h4>
-						</div>
-						<div class="col-6 d-flex justify-content-end">
-							<% var currentDate = new Date();
-															   var diffSeconds = Math.round((currentDate.getTime() - comment.date.getTime())/1000);
-															   var diffMinutes = Math.round(diffSeconds / 60);
-															   var diffHours = Math.floor(diffSeconds / (60 * 60));
-															   var diffDays = Math.floor(diffSeconds / (60 * 60 * 24));
-						
-															   if(diffSeconds < 60){ %>
-							<span><em><%= diffSeconds %> seconds ago</em></span>
-							<%} else if(diffMinutes < 60) { %>
-							<span><em><%= diffMinutes %> minutes ago</em></span>
-							<% } else if(diffHours < 24) { %>
-							<span><em><%= diffHours %> hours ago</em></span>
-							<% } else if(diffDays < 365) { %>
-							<span><em><%= diffDays %> days ago</em></span>
-							<% } else { %>
-							<span><em><%= Math.floor(diffDays / 365) %> years ago</em></span>
-							<% } %>%>
-
-						</div>
-					</div>
-					<p class="commentText text-justify"><%= comment.text %></p>
-					<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+				<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+				<div class="ownerButtons d-flex-inline float-right mb-2">
 					<button class="btn btn-sm btn-warning">
-						<a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit"
-							class="text-white">
+						<a href="/campgrounds/<%= campground._id %>/edit" class="text-white">
 							Edit
 						</a>
 					</button>
-					<form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE"
-						method="POST" class="d-inline" id="formDeleteCommentID<%= comment._id %>">
-						<button type="submit" class="btn btn-danger btn-sm">
+
+					<!-- DELETE CAMPGROUND FORM  -->
+					<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" class="d-inline"
+						id="deleteCampgroundForm">
+						<button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
+							data-target="#deleteCampground">
 							Delete
 						</button>
+
+						<div class="modal fade" id="deleteCampground" tabindex="-1"
+							aria-labelledby="deleteCampgroundLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="deleteCampgroundLabel">Delete Campground</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										Are you sure that you want to delete this campground?
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary"
+											data-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-danger">Delete</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</form>
-					<% }; %>
-					<hr>
 				</div>
-				<% }); %>
+				<% }; %>
 			</div>
 		</div>
 	</div>
+
+	<!-- CAMPGROUND COMMENTS -->
+	<div class="mb-5">
+		<!-- NEW COMMENT BUTTON -->
+		<div class="row d-flex align-items-center mb-4">
+			<div class="col-8">
+				<h2 class="text-left m-0">Comments <i class="fas fa-comments"></i></h2>
+			</div>
+			<div class="col-4">
+				<div class="text-right">
+					<a class="newCommentButton btn btn-sm" data-toggle="collapse" href="#collapseExample" role="button"
+						aria-expanded="false" aria-controls="collapseExample">
+						New Comment
+					</a>
+				</div>
+			</div>
+			<div class="col-12 collapse" id="collapseExample">
+				<div class="card card-body my-3">
+					<form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+						<input type="hidden" name="comment[date]" value='<%= new Date() %>'>
+						<div class="form-group w-100">
+							<label for="content"><strong>New Comment</strong></label>
+							<textarea type="text" name="comment[text]" class="form-control" placeholder="New Comment"
+								id="content" rows="4"></textarea>
+						</div>
+						<div class="form-group w-50 mx-auto">
+							<div class="d-flex justify-content-around">
+								<button type="submit" name="submit" class="btn btn-primary">
+									Submit <i class="far fa-comment-dots"></i>
+								</button>
+								<a href="/campgrounds/<%= campground._id %>" class="btn btn-warning text-white">
+									Cancel <i class="far fa-window-close text-white"></i></i>
+								</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- DISPLAYING COMMENTS -->
+		<% campground.comments.forEach(function(comment){ %>
+		<div class="row mb-2">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-6">
+						<h4 class="commentAuthor">
+							<strong><%= comment.author.username %></strong>
+						</h4>
+					</div>
+					<div class="col-6 d-flex justify-content-end">
+						<% var currentDate = new Date();
+																var diffSeconds = Math.round((currentDate.getTime() - comment.date.getTime())/1000);
+																var diffMinutes = Math.round(diffSeconds / 60);
+																var diffHours = Math.floor(diffSeconds / (60 * 60));
+																var diffDays = Math.floor(diffSeconds / (60 * 60 * 24));
+						
+																if(diffSeconds < 60){ %>
+						<span><em><%= diffSeconds %> seconds ago</em></span>
+						<%} else if(diffMinutes < 60) { %>
+						<span><em><%= diffMinutes %> minutes ago</em></span>
+						<% } else if(diffHours < 24) { %>
+						<span><em><%= diffHours %> hours ago</em></span>
+						<% } else if(diffDays < 365) { %>
+						<span><em><%= diffDays %> days ago</em></span>
+						<% } else { %>
+						<span><em><%= Math.floor(diffDays / 365) %> years ago</em></span>
+						<% } %>%>
+
+					</div>
+				</div>
+				<p class="commentText text-justify"><%= comment.text %></p>
+				<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+				<button class="btn btn-sm btn-warning">
+					<a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="text-white">
+						Edit
+					</a>
+				</button>
+				<form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE"
+					method="POST" class="d-inline" id="formDeleteCommentID<%= comment._id %>">
+					<button type="submit" class="btn btn-danger btn-sm">
+						Delete
+					</button>
+				</form>
+				<% }; %>
+				<hr>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+
+	<!-- GO BACK TO ALL CAMPGROUNDS BUTTON -->
 	<div class="text-center my-5">
 		<button class="btn btn-dark">
 			<a class="text-white" href="/campgrounds">All Campgrounds</a>
 		</button>
 	</div>
+</div>
+
 <% include ../partials/footer %>

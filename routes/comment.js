@@ -14,24 +14,7 @@ var middleware = require("../middleware");
 // =================================================================
 // NEW COMMENT
 // =================================================================
-router.get("/new", middleware.isLoggedin, function(req, res){
-	//find the campground with the provided ID
-	var campground_ID = req.params.id;
-	// //TO SEE ALL COMMENTS INSIDE THE CAMPGROUND
-	Campground.findById(campground_ID, function(err, campground){
-		if(err){
-			req.flash("error", "Campground not found");
-			console.log(err);
-		} else {
-			res.render("comments/new", {campground: campground , 
-				styles: [], 
-				scripts: { header: [] , footer: [] }
-			});
-		}
-	});
-});
-
-router.post("/", function(req, res){
+router.post("/", middleware.isLoggedin, function(req, res){
 	// console.log(req.params);
 	// console.log(req.body.comment);
 	var newComment = req.body.comment;
@@ -53,7 +36,7 @@ router.post("/", function(req, res){
 					//Save changes
 					comment.save();
 					//Pushing the new Comment inside the Campground
-					campground.comments.push(comment);
+					campground.comments.unshift(comment);
 					//Saving changes on campground
 					campground.save();
 					req.flash("success", "Successfully added comment");
@@ -67,7 +50,6 @@ router.post("/", function(req, res){
 // =================================================================
 // EDIT COMMENT ROUTE
 // =================================================================
-
 router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, res){
 	Comment.findById(req.params.comment_id, function(err, foundComment){
 		if(err){

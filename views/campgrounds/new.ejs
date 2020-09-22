@@ -11,21 +11,15 @@
 				<div class="col-md-9 d-flex justify-content-center float-left">
 					<div class="form-group w-100">
 						<label for="name" class="text-uppercase"><strong>Campground Name</strong></label>
-						<input type="text" name="name" class="form-control" id="name" placeholder="New Campground" required>
+						<input type="text" name="name" class="form-control" id="name" placeholder="New Campground"
+							required>
 					</div>
 				</div>
 				<div class="col-md-3 d-flex justify-content-center float-left">
 					<div class="form-group w-100">
 						<label for="price" class="text-uppercase"><strong>Campground Price</strong></label>
-						<input type="number" name="price" class="form-control" id="price" placeholder="Price" min="0.01" step="0.01" required>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 d-flex justify-content-center">
-					<div class="form-group w-100">
-						<label for="image" class="text-uppercase"><strong>Campground Image URL</strong></label>
-						<input type="text" name="imageURL" class="form-control" id="image" placeholder="Image URL" required>
+						<input type="number" name="price" class="form-control" id="price" placeholder="Price" min="0.01"
+							step="0.01" required>
 					</div>
 				</div>
 			</div>
@@ -33,9 +27,68 @@
 			<div class="row">
 				<div class="col-md-12 d-flex justify-content-center">
 					<div class="form-group w-100">
-						<label for="campground-description" class="text-uppercase"><strong>Campground Description</strong></label>
-						<textarea type="text" name="description" id="campground-description" class="form-control" placeholder="Campground Description" rows="5" spellcheck="true"></textarea>
+						<label for="image" class="text-uppercase"><strong>Campground Image URL</strong></label>
+						<input type="text" name="imageURL" class="form-control" id="image" placeholder="Image URL"
+							required>
 					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 d-flex justify-content-center">
+					<div class="form-group w-100">
+						<label for="campground-description" class="text-uppercase"><strong>Campground
+								Description</strong></label>
+						<textarea type="text" name="description" id="campground-description" class="form-control"
+							placeholder="Campground Description" rows="5" spellcheck="true"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mb-3">
+				<div class="col-3 form-group">
+					<select class="form-control" name="accomodation[]" id="accomodation" multiple>
+						<optgroup label="Accomodation">
+							<option value="Hut">Hut</option>
+							<option value="Room">Room</option>
+							<option value="Tent">Tent</option>
+							<option value="Hammock">Hammock</option>
+						</optgroup>
+					</select>
+				</div>
+				<div class="col-3 form-group">
+					<select class="form-control" name="services[]" id="services" multiple>
+						<optgroup label="Services">
+							<option value="Bathroom">Bathroom</option>
+							<option value="Meals">Meals</option>
+							<option value="Tourist Guide">Tourist Guide</option>
+							<option value="Medical Supplies">Medical Supplies</option>
+							<option value="Wifi">Wifi</option>
+						</optgroup>
+					</select>
+				</div>
+				<div class="col-3 form-group">
+					<select class="form-control" name="environment[]" id="environment" multiple>
+						<optgroup label="Environment">
+							<option value="Waterfall">Waterfall</option>
+							<option value="Mountains">Mountains</option>
+							<option value="River">River</option>
+							<option value="Desert">Desert</option>
+							<option value="Beach">Beach</option>
+							<option value="Forest">Forest</option>
+						</optgroup>
+					</select>
+				</div>
+				<div class="col-3 form-group">
+					<select class="form-control" name="activities[]" id="activities" multiple>
+						<optgroup label="Activities">
+							<option value="Hiking">Climbing</option>
+							<option value="Swimming">Swimming</option>
+							<option value="Fishing">Fishing</option>
+							<option value="Gardening">Gardening</option>
+							<option value="Surfing">Surfing</option>
+						</optgroup>
+					</select>
 				</div>
 			</div>
 
@@ -49,12 +102,14 @@
 				<div class="col-md-3">
 					<div class="d-flex justify-content-center">
 						<div class="form-group">
-							<a href="/campgrounds" class="btn btn-warning text-white">Go Back <i class="fas fa-undo-alt text-dark"></i></a>
+							<a href="/campgrounds" class="btn btn-warning text-white">Go Back <i
+									class="fas fa-undo-alt text-white"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3"></div>
-			</div>	
+			</div>
+
 		</form>
 
 	</div>

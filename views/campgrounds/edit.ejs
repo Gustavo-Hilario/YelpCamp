@@ -1,37 +1,101 @@
 <% include ../partials/header%>
 
 <div class="container w-75 border-secondary border-top border-bottom py-2">
-	
+
 	<h3 class="d-none d-sm-block display-5 text-center">Edit <%= campground.name %></h3>
-	
-	<!-- MAKE A PUT ROUTE-->
-	
+
+	<!-- DO A PUT ROUTE-->
+
 	<form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
 		<div class="d-flex justify-content-center">
 			<div class="form-group w-75">
 				<label for="campground" class=""><em>Campground Name</em></label>
-				<input type="text" name="campground[name]" class="form-control" id="campground" value="<%= campground.name %>">
+				<input type="text" name="campground[name]" class="form-control" id="campground"
+					value="<%= campground.name %>">
 			</div>
 		</div>
 		<div class="d-flex justify-content-center">
 			<div class="form-group w-75">
 				<label for="price" class="text-uppercase"><strong>Campground Price</strong></label>
-				<input type="number" name="campground[price]" class="form-control" value="<%= campground.price %>" id="price" placeholder="Price" min="0.01" step="0.01">
+				<input type="number" name="campground[price]" class="form-control" value="<%= campground.price %>"
+					id="price" placeholder="Price" min="0.01" step="0.01">
 			</div>
 		</div>
 		<div class="d-flex justify-content-center">
 			<div class="form-group w-75">
 				<label for="image" class=""><em>Campground Image URL</em></label>
-				<input type="text" name="campground[image]" class="form-control" id="image" value="<%= campground.image %>">
+				<input type="text" name="campground[image]" class="form-control" id="image"
+					value="<%= campground.image %>">
 			</div>
 		</div>
 		<div class="d-flex justify-content-center">
 			<div class="form-group w-75">
 				<label for="campground" class=""><em>Campground Description</em></label>
-				<textarea type="text" name="campground[description]" class="form-control" placeholder="Campground Description" rows="5"><%= campground.description %></textarea>
+				<textarea type="text" name="campground[description]" class="form-control"
+					placeholder="Campground Description" rows="5"><%= campground.description %></textarea>
 				<!-- <input type="text" name="campground[description]" class="form-control" value="<%= campground.description %>"> -->
 			</div>
 		</div>
+
+		<div class="row mb-3">
+			<div class="col-3 form-group">
+				<select class="form-control" name="campground[features][accomodation][]" id="accomodation" multiple>
+					<optgroup label="Accomodation">
+						<%  var accomArray = ["Hut", "Room", "Tent","Hammock"];
+						accomArray.forEach( (acc) => {
+							if(campground.features.accomodation.includes(acc)) { %>
+						<option value="<%= acc %>" selected><%= acc %></option>
+						<% } else { %>
+						<option value="<%= acc %>"><%= acc %></option>
+						<% }
+					 }) %>
+					</optgroup>
+				</select>
+			</div>
+			<div class="col-3 form-group">
+				<select class="form-control" name="campground[features][services][]" id="services" multiple>
+					<optgroup label="Services">
+						<%  var serviceArray = ["Bathroom", "Meals", "Tourist Guide","Medical Supplies", "Wifi"];
+							serviceArray.forEach( (service) => {
+								if(campground.features.services.includes(service)) { %>
+									<option value="<%= service %>" selected><%= service %></option>
+								<% } else { %>
+									<option value="<%= service %>"><%= service %></option>
+								<% }
+						}) %>
+					</optgroup>
+				</select>
+			</div>
+			<div class="col-3 form-group">
+				<select class="form-control" name="campground[features][environment][]" id="environment" multiple>
+					<optgroup label="Environment">
+						<%  var environmentArray = ["Waterfall", "Mountains", "River", "Desert", "Beach", "Forest"];
+							environmentArray.forEach( (environment) => {
+								if(campground.features.environment.includes(environment)) { %>
+									<option value="<%= environment %>" selected><%= environment %></option>
+								<% } else { %>
+									<option value="<%= environment %>"><%= environment %></option>
+								<% }
+						}) %>
+					</optgroup>
+				</select>
+			</div>
+			<div class="col-3 form-group">
+				<select class="form-control" name="campground[features][activities][]" id="activities" multiple>
+					<optgroup label="Activities">
+						<%  var activitiesArray = ["Hiking", "Swimming", "Fishing", "Gardening", "Surfing"];
+							activitiesArray.forEach( (activity) => {
+								if(campground.features.activities.includes(activity)) { %>
+									<option value="<%= activity %>" selected><%= activity %></option>
+								<% } else { %>
+									<option value="<%= activity %>"><%= activity %></option>
+								<% }
+						}) %>
+					</optgroup>
+				</select>
+			</div>
+		</div>
+
 		<div class="d-flex justify-content-center">
 			<div class="form-group w-75">
 				<button type="submit" name="submit" class="btn-block btn-primary btn-lg">SUBMIT</button>
@@ -39,10 +103,10 @@
 		</div>
 		<div class="d-flex justify-content-center">
 			<div class="form-group">
-					<a href="/campgrounds" class="text-secondary">GO BACK<i class="fas fa-undo-alt text-dark"></i></a>
+				<a href="/campgrounds" class="text-secondary">GO BACK<i class="fas fa-undo-alt text-dark"></i></a>
 			</div>
 		</div>
 	</form>
-	
+
 </div>
 <% include ../partials/footer%>

@@ -36,6 +36,7 @@ router.get("/new", middleware.isLoggedin, function(req, res){
 // =================================================================
 router.post("/", middleware.isLoggedin, function(req, res){
 // /campground is a RESTful convention to POST on the campground (Get)
+	console.log(req.body);
 	var name = req.body.name;
 	var price = req.body.price;
 	var imageURL = req.body.imageURL;
@@ -43,8 +44,19 @@ router.post("/", middleware.isLoggedin, function(req, res){
 	var author = {
 			id: req.user._id,
 			username: req.user.username
+		};
+	var accomodation = req.body.accomodation;
+	var services = req.body.services;
+	var environment = req.body.environment;
+	var activities = req.body.activities;
+	var features = 
+		{
+			accomodation: accomodation,
+			services: services,
+			environment: environment,
+			activities: activities,
 		}
-	var newCampground = {name: name, price: price, image: imageURL, description: description, author: author};
+	var newCampground = {name: name, price: price, image: imageURL, description: description, author: author, features: features};
 		
 	Campground.create(newCampground, function(err, createdCampground){
 		if(err){

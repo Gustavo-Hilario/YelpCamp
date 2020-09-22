@@ -4,7 +4,8 @@
 <head>
 	<title>YelpCamp</title>
 	<!-- Make site responsive on mobile/tablet -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
 
 	<!--Bootstrap CSS 4.5.0-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -52,46 +53,48 @@
 		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
 		crossorigin="anonymous"></script>
 
-	<div class="container-fluid m-0 position-relative" id="navbar-wrap">
-		<nav class="navbar navbar-expand-md navbar-dark fixed-top py-0 d-none">
-			<a class="navbar-brand" id="brand" href="/home">YelpCamp <i class="fas fa-campground"></i></a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav">
-					<% if(!currentUser){ %>
-					<li class="nav-item">
-						<a class="nav-link" href="/loguin">Loguin <i class="fas fa-sign-in-alt"></i></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/register">Sign Up <i class="fas fa-user-plus"></i></a>
-					</li>
-					<% } else { %>
-					<li class="nav-item">
-						<a class="nav-link" href="/secret">Signed In As <%= currentUser.username %></a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
-					</li>
-					<% } %>
-				</ul>
-			</div>
-		</nav>
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top py-0 d-none">
+		<a class="navbar-brand" id="brand" href="/home">YelpCamp <i class="fas fa-campground"></i></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav">
+				<% if(!currentUser){ %>
+				<li class="nav-item">
+					<a class="nav-link" href="/loguin">Loguin <i class="fas fa-sign-in-alt"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/register">Sign Up <i class="fas fa-user-plus"></i></a>
+				</li>
+				<% } else { %>
+				<li class="nav-item">
+					<a class="nav-link" href="/secret">Signed In As <%= currentUser.username %></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/logout">Logout <i class="fas fa-sign-out-alt"></i></a>
+				</li>
+				<% } %>
+			</ul>
+		</div>
+	</nav>
 
-		<div class="alertDiv position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 10;">
-			<% if(error != ""){ %>
-			<div class="container-fluid alert alert-danger text-center" role="alert">
-				<p class="m-0"><strong><%= error %></strong></p>
-			</div>
-			<% }; %>
+	<div class="container-fluid m-0">
+		<div class="position-relative">
+			<div class="alertDiv position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 10;">
+				<% if(error != ""){ %>
+				<div class="container-fluid alert alert-danger text-center" role="alert">
+					<p class="m-0"><strong><%= error %></strong></p>
+				</div>
+				<% }; %>
 
-			<% if(success && success.length > 0){ %>
-			<div class="container-fluid alert alert-success text-center" role="alert">
-				<p class="m-0"><strong><%= success %></strong></p>
-			</div>
+				<% if(success && success.length > 0){ %>
+				<div class="container-fluid alert alert-success text-center" role="alert">
+					<p class="m-0"><strong><%= success %></strong></p>
+				</div>
 
-			<% }; %>
+				<% }; %>
+			</div>
 		</div>
 	</div>

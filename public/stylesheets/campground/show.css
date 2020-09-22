@@ -13,6 +13,12 @@ a:hover{
 /* RESPONSIVE IMAGE */
 div#campground-image{
 	opacity: 0.98;
+	height: 400px; 
+	width: 400px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover; 
+	border-radius: 50%;
 }
 
 div#campground-image:hover{
@@ -95,7 +101,7 @@ div#campground-image:hover{
 		}
 
 div#campground-description{
-	margin: 150px 0px 100px 0px;
+	margin: 100px 0px;
 }
 
 p.campgroundauthor{
@@ -116,10 +122,18 @@ a.newCommentButton:hover{
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+	div#campground-image{
+		height: 450px; 
+		width: 450px; 
+	}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+	div#campground-image{
+		height: 500px; 
+		width: 500px; 
+	}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -128,4 +142,8 @@ a.newCommentButton:hover{
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	div#campground-image{
+		height: 550px; 
+		width: 550px; 
+	}
 }

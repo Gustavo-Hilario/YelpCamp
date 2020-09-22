@@ -4,6 +4,6 @@ $(function () {
 
 $(document).ready(function(){
     $('.feature-item').mouseover(() => {
-        $(this).popover('show');
+        $('this').popover('show');
     });
  });

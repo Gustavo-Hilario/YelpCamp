@@ -1,42 +1,40 @@
 <% include ../partials/header %>
 
-<div class="container-fluid mx-4">
+<div class="container">
 	<!-- CAMPGROUND NAME+PRICE -->
 	<div class="row">
-		<div class="col-4 offset-1 text-center mt-2">
+		<div class="col-6 col-md-8 col-xl-9 text-center mt-2">
 			<a href="/campgrounds/<%= campground._id %>">
 				<h2 class="campgroundName"><strong><%= campground.name %></strong></h2>
 			</a>
 		</div>
-		<div class="col-4 offset-1 text-center mt-2">
+		<div class="col-6 col-md-4 col-xl-3 text-right mt-2">
 			<h2 class="campgroundPrice">$<%= campground.price %>/night</h2>
 		</div>
 	</div>
 
 	<!-- CAMPGROUND IMAGE + FEATURES -->
-	<div class="row mt-5" style="height: 600px;">
+	<div class="row mt-2 mt-lg-5">
 		<!-- IMAGE -->
-		<div class="col-6 p-0">
-			<div class="d-flex justify-content-center">
+		<div class="col-12 col-lg-6 mt-lg-0">
+			<div class="d-flex justify-content-center w-100 h-100">
 				<a href="/campgrounds/<%= campground._id %>">
-					<div class="shadow-lg border border-secondary" id="campground-image" style="height: 600px; width: 600px; background-image: url('<%= campground.image %>');
-						background-repeat: no-repeat; background-size: cover; background-position: center; border-radius: 50%;">
+					<div class="shadow-lg border border-secondary" id="campground-image"
+						style="background-image: url('<%= campground.image %>');">
 					</div>
 				</a>
 			</div>
 		</div>
 		<!-- FEATURES -->
-		<div class="col-6 p-0" style="height: 600px; width: 600px;">
+		<div class="col-12 mt-5 col-lg-6 offset-lg-0 mt-lg-0">
 			<div class="row h-25 w-100 pb-2">
 				<div class="col-12">
 					<h2>Accomodation Type</h2>
-					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2 rounded">
-						<div class="w-100 d-flex align-items-center">
-							<% campground.features.accomodation.forEach( (accomodation) => { %>
-							<div class="col-2 feature-item" id="<%= accomodation.split(' ')[0] %>" data-toggle="popover" title="<%= accomodation %>"
-							data-placement="top" data-trigger="hover" data-content=""></div>
-							<% }) %>
-						</div>
+					<div class="col-12 h-75 d-flex justify-content-start align-items-center bg-light py-2 rounded">
+						<% campground.features.accomodation.forEach( (accomodation) => { %>
+						<div class="col-2 feature-item" id="<%= accomodation.split(' ')[0] %>" data-toggle="popover"
+							title="<%= accomodation %>" data-placement="top" data-trigger="hover" data-content=""></div>
+						<% }) %>
 					</div>
 				</div>
 			</div>
@@ -46,8 +44,8 @@
 					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
 						<div class="w-100 d-flex align-items-center">
 							<% campground.features.services.forEach( (services) => { %>
-							<div class="col-2 feature-item" id="<%= services.split(' ')[0] %>" data-toggle="popover" title="<%= services %>"
-							data-placement="top" data-trigger="hover" data-content=""></div>
+							<div class="col-2 feature-item" id="<%= services.split(' ')[0] %>" data-toggle="popover"
+								title="<%= services %>" data-placement="top" data-trigger="hover" data-content=""></div>
 							<% }) %>
 						</div>
 					</div>
@@ -59,8 +57,9 @@
 					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
 						<div class="w-100 d-flex align-items-center">
 							<% campground.features.environment.forEach( (environment) => { %>
-							<div class="col-2 feature-item" id="<%= environment.split(' ')[0] %>" data-toggle="popover" title="<%= environment %>"
-							data-placement="top" data-trigger="hover" data-content=""></div>
+							<div class="col-2 feature-item" id="<%= environment.split(' ')[0] %>" data-toggle="popover"
+								title="<%= environment %>" data-placement="top" data-trigger="hover" data-content="">
+							</div>
 							<% }) %>
 						</div>
 					</div>
@@ -72,8 +71,9 @@
 					<div class="col-12 h-75 d-flex justify-content-center bg-light py-2">
 						<div class="w-100 d-flex align-items-center">
 							<% campground.features.activities.forEach( (activities) => { %>
-							<div class="col-2 feature-item" id="<%= activities %>" data-toggle="popover" title="<%= activities %>"
-							data-placement="top" data-trigger="hover" data-content=""></div>
+							<div class="col-2 feature-item" id="<%= activities %>" data-toggle="popover"
+								title="<%= activities %>" data-placement="top" data-trigger="hover" data-content="">
+							</div>
 							<% }) %>
 						</div>
 					</div>
@@ -81,9 +81,7 @@
 			</div>
 		</div>
 	</div>
-</div>
 
-<div class="container">
 	<!-- CAMPGROUND DESCRIPTION -->
 	<div class="row" id="campground-description">
 		<h2 class="mb-4">What is <%= campground.name %>?</h2>
@@ -97,11 +95,9 @@
 
 				<% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
 				<div class="ownerButtons d-flex-inline float-right mb-2">
-					<button class="btn btn-sm btn-warning">
-						<a href="/campgrounds/<%= campground._id %>/edit" class="text-white">
-							Edit
-						</a>
-					</button>
+					<a href="/campgrounds/<%= campground._id %>/edit" class="btn btn-sm btn-warning text-white">
+						Edit
+					</a>
 
 					<!-- DELETE CAMPGROUND FORM  -->
 					<form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST" class="d-inline"

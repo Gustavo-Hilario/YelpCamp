@@ -3,13 +3,13 @@
 <div class="container">
 	<!-- CAMPGROUND NAME+PRICE -->
 	<div class="row">
-		<div class="col-6 col-md-8 col-xl-9 text-center mt-2">
+		<div class="col-12 col-md-8 col-xl-9 text-center mt-2">
 			<a href="/campgrounds/<%= campground._id %>">
 				<h2 class="campgroundName"><strong><%= campground.name %></strong></h2>
 			</a>
 		</div>
-		<div class="col-6 col-md-4 col-xl-3 text-right mt-2">
-			<h2 class="campgroundPrice">$<%= campground.price %>/night</h2>
+		<div class="col-12 col-md-4 col-xl-3 text-center mt-2">
+			<h2 id="campgroundPrice">$<%= campground.price %>/night</h2>
 		</div>
 	</div>
 
@@ -142,6 +142,7 @@
 			<div class="col-8">
 				<h2 class="text-left m-0">Comments <i class="fas fa-comments"></i></h2>
 			</div>
+			<% if(currentUser){ %>
 			<div class="col-4">
 				<div class="text-right">
 					<a class="newCommentButton btn btn-sm" data-toggle="collapse" href="#collapseExample" role="button"
@@ -159,7 +160,7 @@
 							<textarea type="text" name="comment[text]" class="form-control" placeholder="New Comment"
 								id="content" rows="4" required></textarea>
 						</div>
-						<div class="form-group w-50 mx-auto">
+						<div class="form-group mx-auto" id="newCommentActions">
 							<div class="d-flex justify-content-around">
 								<button type="submit" name="submit" class="btn btn-primary">
 									Submit <i class="far fa-comment-dots"></i>
@@ -172,6 +173,15 @@
 					</form>
 				</div>
 			</div>
+			<% } else { %>
+			<div class="col-4">
+				<div class="text-right">
+					<a class="btn btn-sm btn-primary" href="/loguin" role="button">
+						Loguin to Comment
+					</a>
+				</div>
+				</div>
+			<% } %>
 		</div>
 
 		<!-- DISPLAYING COMMENTS -->
@@ -185,15 +195,15 @@
 						</h4>
 					</div>
 					<div class="col-6 d-flex justify-content-end">
-						<% var currentDate = new Date();
-																var diffSeconds = Math.round((currentDate.getTime() - comment.date.getTime())/1000);
-																var diffMinutes = Math.round(diffSeconds / 60);
-																var diffHours = Math.floor(diffSeconds / (60 * 60));
-																var diffDays = Math.floor(diffSeconds / (60 * 60 * 24));
-						
-																if(diffSeconds < 60){ %>
+					<%  var currentDate = new Date();
+						var diffSeconds = Math.round((currentDate.getTime() - comment.date.getTime())/1000);
+						var diffMinutes = Math.round(diffSeconds / 60);
+						var diffHours = Math.floor(diffSeconds / (60 * 60));
+						var diffDays = Math.floor(diffSeconds / (60 * 60 * 24));
+
+						if(diffSeconds < 60){ %>
 						<span><em><%= diffSeconds %> seconds ago</em></span>
-						<%} else if(diffMinutes < 60) { %>
+						<% } else if(diffMinutes < 60) { %>
 						<span><em><%= diffMinutes %> minutes ago</em></span>
 						<% } else if(diffHours < 24) { %>
 						<span><em><%= diffHours %> hours ago</em></span>
@@ -201,17 +211,15 @@
 						<span><em><%= diffDays %> days ago</em></span>
 						<% } else { %>
 						<span><em><%= Math.floor(diffDays / 365) %> years ago</em></span>
-						<% } %>%>
-
+					<% } %>
 					</div>
 				</div>
 				<p class="commentText text-justify"><%= comment.text %></p>
 				<% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-				<button class="btn btn-sm btn-warning">
-					<a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="text-white">
-						Edit
-					</a>
-				</button>
+					<!-- href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" -->
+				<a class="btn btn-sm btn-warning text-white editCommentButton">
+					Edit
+				</a>
 				<form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE"
 					method="POST" class="d-inline" id="formDeleteCommentID<%= comment._id %>">
 					<button type="submit" class="btn btn-danger btn-sm">

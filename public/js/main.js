@@ -9,7 +9,11 @@ $(document).ready(function () {
 		$(window).scroll(function () {
 			var currentYPosition = window.pageYOffset;
 			if (currentYPosition >= maxYPositionwithoutNavbar) {
-				$("#topCampgrounds").css("margin-top", "200px");
+				if ($(window).width() < 768){
+					$("#topCampgrounds").css("margin-top", "100px");
+				} else {
+					$("#topCampgrounds").css("margin-top", "200px");
+				}
 				$("nav").removeClass("d-none");
 			} else {
 				$("#topCampgrounds").css("margin-top", "50px");

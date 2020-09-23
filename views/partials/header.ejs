@@ -4,8 +4,8 @@
 <head>
 	<title>YelpCamp</title>
 	<!-- Make site responsive on mobile/tablet -->
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0"/>
-	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes"/> -->
 
 	<!--Bootstrap CSS 4.5.0-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -80,21 +80,18 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid m-0">
-		<div class="position-relative">
-			<div class="alertDiv position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 10;">
-				<% if(error != ""){ %>
-				<div class="container-fluid alert alert-danger text-center" role="alert">
-					<p class="m-0"><strong><%= error %></strong></p>
-				</div>
-				<% }; %>
-
-				<% if(success && success.length > 0){ %>
-				<div class="container-fluid alert alert-success text-center" role="alert">
-					<p class="m-0"><strong><%= success %></strong></p>
-				</div>
-
-				<% }; %>
+	<div class="container-fluid">
+		<div class="position-absolute w-100" style="top: 0; left: 0; z-index: 10;">
+			<% if(error != ""){ %>
+			<div class="alert alert-danger text-center" role="alert">
+				<p class="m-0"><strong><%= error %></strong></p>
 			</div>
+			<% }; %>
+
+			<% if(success && success.length > 0){ %>
+			<div class="alert alert-success text-center" role="alert">
+				<p class="m-0"><strong><%= success %></strong></p>
+			</div>
+			<% }; %>
 		</div>
 	</div>

@@ -72,7 +72,7 @@ app.use("/campgrounds", campgroundsRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 app.get("*", function(req, res){
-	res.send("This page does not exist man. I am really worried by your mental health");
+	res.send("This page does not exist. I am really worried by your mental health");
 });
 
 app.listen(process.env.PORT || 5000, function(){
